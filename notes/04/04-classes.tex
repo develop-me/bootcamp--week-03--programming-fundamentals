@@ -1,0 +1,114 @@
+We can also create abstract concepts (\textbf{classes}) of objects:
+
+\begin{minted}{javascript}
+    class Person {
+        constructor(name, dob) {
+            this.name = name;
+            this.dob = dob;
+        }
+
+        getAge() {
+            let now = new Date();
+            let millisecondsPerYear = 31556952000;
+            let years = (now - this.dob) / millisecondsPerYear;
+
+            return Math.floor(years);
+        }
+    }
+\end{minted}
+
+This allows us to create multiple object \textbf{instances} with the same structure, without having to rewrite the same object literal each time.
+\\
+
+Each instance has its own set of properties and internally \texttt{this} refers to the specific instance it belongs to:
+
+\begin{minted}{javascript}
+    // we use the "new" keyword to create an "instance" of Person
+    let kye = new Person("Kye", new Date("1965-03-19"));
+    let jane = new Person("Jane", new Date("1973-11-27"));
+
+    // we get back two separate ages, as they are different instances
+    console.log(kye.getAge(), jane.getAge());
+\end{minted}
+
+Note that we give classes names with capital letters: \texttt{Person} rather than \texttt{person}. You don't have to, but it makes it much more obvious what your code is doing.
+
+
+\section{An Example}
+
+A book class:
+
+\begin{minted}{javascript}
+class Book {
+    constructor(title, author) {
+        this.title = title;
+        this.author = author;
+        this.price = null;
+    }
+
+    setPrice(value) {
+        this.price = value;
+        return this;
+    }
+
+    getPrice() {
+        if (this.price === null) {
+            return "Unknown";
+        }
+
+        return "£" + this.price.toFixed(2);
+    }
+}
+
+let book = new Book("Lord of the Rrrings", "JRRRRR Tolkien");
+console.log(book.getPrice()); // "Unknown"
+
+book.setPrice(9.9);
+console.log(book.getPrice()); // "£9.90"
+\end{minted}
+
+It's considered good practice to write \textbf{getter} and \textbf{setter} methods for reading and writing properties when using classes.
+\\
+
+In the example above if we just did \texttt{book.price} we'd get back \texttt{null} some of the time. Whereas if we write a \textbf{getter} function we can guarantee that it always comes back with a useful value that we can show to a user.
+
+
+\begin{infobox}{Returning \texttt{this}}
+
+    We often return \texttt{this} from \textbf{setter} methods: i.e. methods that accept values but don't have an obvious return value.
+
+    \begin{minted}{javascript}
+        class Book {
+            // ...
+
+            setPrice(value) {
+                this.price = value;
+
+                // return this from setPrice
+                return this;
+            }
+
+            // ...
+        }
+    \end{minted}
+
+    This allows us to \textbf{chain} together methods on an object:
+
+    \begin{minted}{javascript}
+        // because .setPrice returns the book object
+        // we can then run .getPrice on it
+        book.setPrice(99).getPrice();
+    \end{minted}
+
+    \textbf{Note}: it wouldn't make sense to return \texttt{this} from \textbf{getter} methods, as the whole point of a getter method is to return a specific value
+\end{infobox}
+
+
+
+\section{Additional Resources}
+
+\begin{itemize}[leftmargin=*]
+    \item \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes}{MDN: Classes}
+    \item \href{https://javascriptplayground.com/es5-getters-setters/}{ES5 Getters and Setters} - an alternative way to do getters/setters
+    \item \href{https://developers.google.com/web/updates/2018/12/class-fields}{Public and private class fields}
+\end{itemize}

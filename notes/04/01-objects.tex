@@ -1,0 +1,145 @@
+Objects are \textit{unordered} collections of values. We use objects to collect together a set of related values. Objects have \textbf{keys} (names) and \textbf{properties} (values).
+\\
+
+Properties can be any type of value (numbers, strings, booleans, functions, arrays, and other objects). We tend not to iterate over the items in an object\footnote{Although we'll look at \textbf{maps} later, which are an exception to this}, so it's fine for different properties to store different types of values.
+
+\begin{minted}{javascript}
+    let empty = {}; // an empty object
+
+    // an object representing a person
+    let person = {
+        name: "Kofi",
+        age: 58,
+        favouriteColours: ["purple", "green"],
+        addresss: { // an object representing and address
+            number: 54, // assign the value 54 to the property "number"
+            road: "Park Street",
+            postcode: "BS3 9LX",
+        },
+    };
+\end{minted}
+
+When we write objects out like this, we call them \textbf{object literals}. Later on we'll look at classes, which give us a different way of creating objects.
+
+\pagebreak
+
+\section{Reading Properties}
+
+We use \textbf{dot-notation} to read the values of properties:
+
+\begin{minted}{javascript}
+    console.log(person.name); // "Kofi"
+    console.log(person.favouriteColours); // ["purple", "green"]
+\end{minted}
+
+You can also use array-style notation (although dot-notation is preferred):
+
+\begin{minted}{javascript}
+    console.log(person["name"]); // "Kofi" - using array style notation
+\end{minted}
+
+\section{Writing Properties}
+
+You can change the value of a property:
+
+\begin{minted}{javascript}
+    person.name = "Ban";
+    person.age = 59;
+\end{minted}
+
+You can also use square bracket notation. This can be useful if you have the property name stored in a variable:
+
+\begin{minted}{javascript}
+    let property = "age";
+
+    // elsewhere
+    person[property] = 80;
+\end{minted}
+
+You can also add new properties to an object after it's been created:
+
+\begin{minted}{javascript}
+    // creates a new property, "country", and gives it "UK" as a value
+    person.nationality = "Ghanaian";
+\end{minted}
+
+\begin{infobox}{Nested Properties}
+    If we wanted to access the \texttt{road} property of the \texttt{address} property of the \texttt{person} object we can do this by extending the dot-notation:
+
+    \begin{minted}{javascript}
+        console.log(person.address.road); // "Park Street"
+        person.address.road = "Bath Road";
+        console.log(person.address.road); // "Bath Road"
+    \end{minted}
+
+    You can do this to any level in the hierarchy: just make sure you include \textit{every} level.
+\end{infobox}
+
+
+\section{Methods}
+
+Objects can have functions as property values. We normally refer to these as \textbf{methods}. There is an object-specific way of writing functions:\footnote{You can write them using \texttt{=>}, but if you do you'll won't have access to \texttt{this}, which we'll cover shortly.}
+
+\begin{minted}{javascript}
+    let basicMaths = {
+        pi: 3.141592654,
+
+        add(a, b) {
+            return a + b;
+        },
+
+        minus(a, b) {
+            return a - b;
+        },
+    };
+
+    basicMaths.add(1, 2); // 3
+    basicMaths.minus(1, 2); // -1
+    basicMaths.pi; // 3.141592654
+\end{minted}
+
+When you used \texttt{arr.sort()}, \texttt{str.split(" ")}, etc. you were calling methods of strings and arrays.
+\\
+
+\textit{Methods are still properties}, so you can't have a method that has the same name as another property (e.g. you can't have a \texttt{.pi()} method and a \texttt{.pi} property)
+
+
+\section{\texttt{this}}
+
+Objects can refer to themselves using the \texttt{this} keyword:
+
+\begin{minted}{javascript}
+    let tori = {
+        name: "Tori",
+        birthdate: new Date("1984-11-22"),
+
+        getAge() {
+            let now = new Date();
+            let millisecondsPerYear = 31556952000;
+
+            // this.birthdate is the birthdate property above
+            let years = (now - this.birthdate) / millisecondsPerYear;
+
+            return Math.floor(years);
+        }
+    };
+
+    tori.getAge(); // 34
+\end{minted}
+
+In the example above, it looks like we \textit{could} have used \texttt{tori} instead of \textit{this}. But objects aren't always assigned to named variables and what's stored in a specific variable can change, whereas the value of \texttt{this} will always point to the object it belongs to.\footnote{That's not strictly true, \texttt{this} is a bit broken in JavaScript. But we'll get to that in the React week}
+\\
+
+Because methods have access to an object's properties via \texttt{this} it is more common for them to not take any arguments. In the above example we don't need to pass anything to the \texttt{getAge()} method because all of the relevant data are stored as properties of the object.
+
+\pagebreak
+
+\section{Additional Resources}
+
+\begin{itemize}[leftmargin=*]
+    \item \href{https://eloquentjavascript.net/04_data.html}{Eloquent JavaScript: Objects and Arrays}
+    \item \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object}{MDN: Objects}
+    \item \href{https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics}{MDN: Object Basics}
+    \item \href{https://blog.bitsrc.io/the-chronicles-of-javascript-objects-2d6b9205cd66}{The Chronicles of JavaScript Objects}
+    \item \href{https://medium.com/javascript-scene/what-is-this-the-inner-workings-of-javascript-objects-d397bfa0708a}{What Is \texttt{this}? The Inner Workings of JavaScript Objects}
+\end{itemize}

@@ -1,0 +1,172 @@
+\section{Scope}
+
+The \textbf{scope} of a variable is the parts of code that you can use the variable name in.
+\\
+
+\texttt{let} and \texttt{const} are \textbf{block scoped}.\footnote{This is probably the most common form of scoping in programming languages} This means that the variable's value is only accessible from within the block in which it is declared (including any blocks within that block).
+\\
+
+Variables created without declaring them will go into \textbf{global} scope.
+
+\begin{minted}{javascript}
+    let x = 10;
+
+    if (x === 10) { // new block
+        let x = 20;
+        y = 50; // goes into global scope, no variable declaration
+        console.log(x); // 20 - different x
+    }
+
+    // logs 10: the x inside the if statement is scoped to that block
+    console.log(x);
+\end{minted}
+
+Function parameters are always scoped to the function they belong to. Variables created with \texttt{var} are also scoped to the containing function, \textit{not} block scoped like \texttt{let} and \texttt{const}.
+
+\begin{minted}{javascript}
+    var x = 1; // in the global scope
+
+    var fn = y => { // y is only available inside the function
+        var z = 2; // z is only available inside the function
+
+        if (z < 3) {
+            var z = 4; // overwrites z above - var not block scoped
+        }
+
+        // can reference x, it was declared outside of the function
+        return z + x + y;
+    };
+
+    var result = fn(12); // we can only access x, result, and fn here
+\end{minted}
+
+
+\section{Function Composition}
+If you write a function that works, then don't be tempted to add additional functionality later. Instead, write a new function that calls the one you've already written.
+\\
+
+For example, say you had a function that works out if a number is divisible by 3. You then need to write a function that works out if a number is divisible by 3 \textit{and} a square number. Rather than editing your existing \texttt{divisibleBy3} function, create a new function that calls the \texttt{divisibleBy3} function.
+
+\begin{minted}{javascript}
+    // does number divide by 3 with no remainder
+    let divisibleBy3 = n => n % 3 === 0;
+
+    // is square root of number an integer
+    let isSquare = n => Math.sqrt(n) % 1 === 0;
+
+    // combine the two bits of functionality in one new function
+    let divisibleBy3Square = n => divisibleBy3(n) && isSquare(n);
+\end{minted}
+
+If you get used to writing short functions that do one thing well, you'll find it much easier to perfect the art of \textbf{function composition}, arguably one of the most important skills in writing complex programs.
+
+
+\section{Pure Functions}
+
+You may sometimes hear people talk about \textbf{pure} functions. A pure function is one that fits the \textit{mathematical} concept of a function: given the same inputs you will always get back the same outputs.
+\\
+
+For example, a function like \texttt{add} is a \textit{pure} function because if you give call it with \texttt{add(4, 5)} you will \textit{always} get back \texttt{9}. There are no two inputs you can pass it that will sometimes return one answer but other times return something else.
+\\
+
+A pure function need not be doing maths to fit the mathematical concept. The function below is also pure, even though it deals with strings:
+
+\begin{minted}{javascript}
+    let shock = a => a + "!";
+\end{minted}
+
+The following function is pure too. It will return the string ``spooky'' for \textit{any} input:
+
+\begin{minted}{javascript}
+    let ghost = () => "spooky";
+\end{minted}
+
+The function \texttt{greet} (from the \hyperlink{greet}{previous chapter}) is \textit{not} pure: depending on the time of day it will return \textit{different} values given the same string. We \textit{could} make it pure by passing the current hour of the day in as a second argument, although this would make it harder to use.
+\\
+
+Pure functions also shouldn't cause \textbf{side-effects}: they should only work with the values they are given and not change anything else.
+\\
+
+The function below causes side-effects:
+
+\begin{minted}{javascript}
+    let x = 10;
+
+    let thing = b => {
+        x = b + 1;
+        return x;
+    };
+\end{minted}
+
+Even though this function will always return the same value given the same inputs, it changes the value of \texttt{x}, which lives outside the function.
+
+\pagebreak
+
+The following is also not pure:
+
+\begin{minted}{javascript}
+    let thing = b => {
+        console.log(b);
+        return b + 1;
+    };
+\end{minted}
+
+Although this presumably doesn't change any values outside of the function it does call \texttt{console.log()}, which outputs text somewhere, thus changing \textit{the world itself} - which is a pretty major side-effect!
+\\
+
+It's worth noting that pure functions can call \textit{other} pure functions without losing their purity, so the \texttt{divisibleBy3Square} function in the previous section is pure, as both of the functions it calls are also pure.
+\\
+
+We can't write a useful program consisting \textit{entirely} of pure functions, as it wouldn't be able to output anything or respond to a user's input. But, because they are self-contained, pure functions are generally much easier to reason about. So it's a good idea to use pure functions wherever you can.
+
+\pagebreak
+
+
+\section{Recursive Functions}
+
+\quoteinline{In order to understand recursion, one must first understand recursion}{Some smart-arse}
+
+A function can call itself. This can be surprisingly powerful:
+
+\begin{minted}{javascript}
+    // works out the factorial of n
+    let factorial = n => {
+        // this condition stops the function calling itself forever
+        if (n <= 1) {
+            return 1;
+        }
+
+        // to find the factorial of n
+        // times n by the factorial of n - 1
+        // e.g. 5! = 5 * 4! = 5 * 4 * 3! etc.
+        return n * factorial(n - 1);
+    };
+\end{minted}
+
+Or if that's too long:
+
+\begin{minted}{javascript}
+    let factorial = n => (n <= 1) ? 1 : n * factorial(n - 1);
+\end{minted}
+
+A recursive function creates a looping structure.
+\\
+
+Anything we can do with recursion can also be done using traditional loops, but it's often much less elegant.
+\\
+
+As with other types of loop, we need to be careful not to create an infinite loop. If we didn't have the \texttt{n <= 1} check in the \texttt{factorial} function, it would keep going forever.
+
+\pagebreak
+
+\section{Additional Resources}
+
+\begin{itemize}[leftmargin=*]
+    \item \href{https://scotch.io/tutorials/understanding-scope-in-javascript}{Scope in JavaScript}
+    \item \href{https://www.youtube.com/watch?v=5LEuJNLfLN0}{Video: Scope in JavaScript}
+    \item \href{https://2ality.com/2019/07/global-scope.html}{How do JavaScript’s global variables really work?}
+    \item \href{https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0}{What is Function Composition?}
+    \item \href{https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976}{What is a Pure Function?}
+    \item \href{https://www.sitepoint.com/recursion-functional-javascript/}{Recursion in Functional JavaScript}
+    \item \href{http://jeffe.cs.illinois.edu/teaching/algorithms/book/01-recursion.pdf}{Algorithms: Recursion}: \textit{deep} dive into recursion
+\end{itemize}

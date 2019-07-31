@@ -1,0 +1,141 @@
+Types are the different sorts of things that a programming language can recognise and work with. Almost all languages have basic types representing numbers, strings (sequences of characters), and booleans (true and false). Most languages also have types representing more complex ``data structures'' such as arrays and objects, which we'll be looking at later in the week.
+
+\section{Numbers}
+
+In JavaScript there is a single ``Number'' type. All of the following are valid number values:
+
+\begin{minted}{javascript}
+    10        // an integer
+    -10       // a negative number
+    1.2345    // a number with a decimal point
+    1.5e3     // scientific notation for 1500
+    0         // zero
+    -0        // negative zero!
+    Infinity  // the concept of Infinity
+\end{minted}
+
+\pagebreak
+
+\begin{infobox}{Numerical Limitations}
+    Many languages have separate types for integers and decimal point numbers (often referred to as ``floats''), but JavaScript isn't fussy. This is a mixed blessing: you don't have to worry about converting between different types of number, but you also get some fairly weird results at times:
+
+    \begin{minted}{javascript}
+        0.1 + 0.2 // 0.30000000000000004
+    \end{minted}
+
+    We get this weird result because JavaScript stores numbers in a binary system that's not optimised for precision (the \href{http://en.wikipedia.org/wiki/IEEE_floating_point}{IEEE 754} format). It's like how we can express one third as a fraction exactly ($\frac{1}{3}$) but we can't represent it exactly in the decimal system ($0.3333333...$)
+    \\
+
+    The intricacies of how numbers are stored in JavaScript and why you get these weird results are all covered in \href{https://www.youtube.com/watch?v=MqHDDtVYJRI}{an excellent talk by Bartek Szopka}.
+\end{infobox}
+
+Basic types normally have a number of associated ``operators''. Numbers have the following:
+\\
+
+\begin{small}
+    \begin{tabu}{c l X}
+        \textbf{Operator} & \textbf{Name} & \textbf{Description} \\
+        \texttt{+}  & addition        & adds two numbers together \\
+        \texttt{-}  & subtraction     & subtracts the second number from the first number \\
+        \texttt{*}  & multiplication  & multiplies two numbers \\
+        \texttt{/}  & division        & divides the first number by the second \\
+        \texttt{\%} & modulus         & remainder after dividing the first number by the second
+    \end{tabu}
+\end{small}
+
+\par\bigskip
+
+You're probably familiar with these concepts, except for \textbf{modulus} - but don't forget that one: it comes in handy in all sorts of places.
+
+\begin{infobox}{Arity}
+    These are all \textbf{binary operators}, meaning that they require two values (have an \textit{arity} of 2), one on each side: \texttt{40 + 2}. You also get \textbf{unary} and \textbf{ternary} operators, which we'll come across shortly.
+\end{infobox}
+
+\pagebreak
+
+Try the following in \texttt{node}:
+
+\begin{minted}{javascript}
+    10 + 10 // 20
+    10 - 20 // -10
+    50 / 3  // 16.666666667
+    10 / 5  // 2
+    100 * 2 // 200
+    11 % 3  // 2
+\end{minted}
+
+
+\section{Strings}
+
+Strings represent a sequence of characters. It's probably easiest to think of them as storing words, but that's not quite right as they can store parts of a word, whole sentences, entire books, or just a single smiling poop emoji\footnote{It's also worth noting that ``word'' has a \href{https://en.wikipedia.org/wiki/Word_(computer_architecture)}{technical meaning in computing}}.
+\\
+
+In order to get JavaScript to recognise a string we surround it with quotes:
+
+\begin{minted}{javascript}
+    "cow"
+    'a string'
+    "an even longer string"
+\end{minted}
+
+You can use double or single quote marks around strings\footnote{This is not true in all programming languages: some only allow double quotes and some (e.g. PHP) treat single and double quotes slightly differently}, but try and stick to one or the other.
+\\
+
+There is a special string known as the \textbf{empty string}, which is simply two sets of quote marks with nothing in between (not even a space): \texttt{""}. You'll probably use this a lot.
+\\
+
+Strings only have a single operator, \texttt{+}, known as the \textbf{concatenation} operator. It joins two strings together:
+
+\begin{minted}{javascript}
+    "hello" + " " + "world" // "hello world"
+    "fish" + "sticks"       // "fishsticks"
+\end{minted}
+
+The above examples are a little contrived as you could (and, in real code, \textit{should}) write them both as a single string:
+
+\begin{minted}{javascript}
+    "hello world"   // "hello world"
+    "fishsticks"    // "fishsticks"
+\end{minted}
+
+However, until we learn about variables there's no other way to demonstrate concatenation.
+
+
+\begin{infobox}{Strings \& Numbers}
+    You need to be careful when using numbers and strings together: they won't always do what you want.
+    \\
+
+    The \texttt{+} operator has two meanings (it is \textbf{overloaded}): addition \textit{and} concatenation. So JavaScript has some rules to work out what it should be:
+
+    \begin{minted}{javascript}
+        12 + 12      // 24 - a number
+        "12" + 12    // "1212" - a string
+        120 + "1"    // "1201" - a string
+        5 + 6 + "1"  // "111" - a string
+    \end{minted}
+
+    Basically, if it comes across a string everything from that point on will be treated as a string too.
+    \\
+
+    You can guard against this by putting an additional \texttt{+} symbol before a value that might not be a number. This \textbf{casts} the string value into a number value:
+
+    \begin{minted}{javascript}
+        +"12" + 12  // 24
+    \end{minted}
+
+    Again, this is a somewhat contrived example, as in the case above you could simply not write the quote marks (\texttt{12 + 12}), but once we start storing values in variables it will make more sense.
+    \\
+
+    It is often necessary to cast a string to a number when getting values from the browser (e.g. an input's value will come back as a string).
+
+\end{infobox}
+
+
+\section{Additional Resources}
+
+\begin{itemize}[leftmargin=*]
+    \item \href{https://eloquentjavascript.net/01_values.html}{Eloquent JavaScript: Values, Types, and Operators}
+    \item \href{http://exploringjs.com/impatient-js/ch_variables-assignment.html}{JavaScript for Impatient Programmers: Variables \& Values}
+    \item \href{https://medium.com/dailyjs/the-why-behind-the-wat-an-explanation-of-javascripts-weird-type-system-83b92879a8db}{The Why Behind the Wat: An Explanation of JavaScript's Weird Type System}
+    \item \href{https://github.com/denysdovhan/wtfjs}{WTFJS}: The idiosyncrasies of JS
+\end{itemize}

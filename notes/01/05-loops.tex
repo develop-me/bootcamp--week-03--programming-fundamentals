@@ -1,0 +1,75 @@
+We use a loop when we want to do something similar more than once.
+
+\section{\texttt{for} Loops}
+
+\texttt{for} loops are useful when you know how many times the loop should run.
+\\
+
+They consist of three parts:
+
+\begin{enumerate}
+    \item \texttt{let i = 0}: setup a variable that we use as a counter
+    \item \texttt{i < 10}: keep running the loop as long as this is true
+    \item \texttt{i += 1}: increment \texttt{i} by 1 every time the loop runs
+\end{enumerate}
+
+\begin{minted}{javascript}
+    // will keep running until i is 9
+    for (let i = 0; i < 10; i += 1) {
+        console.log(i);
+    }
+
+    // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+\end{minted}
+
+It is traditional to use \texttt{i} as the counter variable - one of the few places it's good practice to use a single letter variable name. If you need a loop inside a loop then just keep going down the alphabet (\texttt{j}, \texttt{k}, \ldots).
+
+
+\pagebreak
+
+\section{\texttt{while} Loops}
+
+We use a \texttt{while} loop if we aren't sure how many times the loop needs to run.
+\\
+
+For example, say we wanted to add 1 to 2 to 3 to 4 and so on until we get to a number bigger than 100. We known when we want it to stop (when the total is bigger than 100), but we don't know how many times it needs to run.
+
+\begin{minted}{javascript}
+    let i = 0;     // keeps track of which number we're adding
+    let total = 0; // keeps track of the total so far
+
+    // will keep running until total is more than 100
+    while (total <= 100) {
+        total += i;
+        i += 1;
+    }
+
+    console.log(total); // 105
+    console.log(i); // 15 - so the loop ran 15 times
+\end{minted}
+
+
+
+\section{Infinite Loops}
+
+We need to be careful to avoid infinite loops: loops that never stop running. These sometimes occur because of typos, but more often because you use a variable that isn't equal to what you're expecting.
+
+\begin{minted}{javascript}
+    for (let i = 0; i < 10; i -= 1) {
+        // will never stop
+        // why not?
+    }
+\end{minted}
+
+An infinite loop will keep running until you kill the process that's running it. If you're running code in \texttt{node} and you think you've got an infinite loop then press \texttt{Ctrl+C}, which will kill the \texttt{node} process.
+
+\pagebreak
+
+\section{Additional Resources}
+
+\begin{itemize}[leftmargin=*]
+    \item \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration}{MDN: Loops}
+    \item \href{https://eloquentjavascript.net/02_program_structure.html}{Eloquent JavaScript: Program Structure}
+    \item \href{http://exploringjs.com/impatient-js/ch_control-flow.html}{JavaScript for Impatient Programmers: Control Flow}
+    \item \href{https://www.wnycstudios.org/story/radiolab-loops}{Radiolab: Loops}: Nothing to do with programming loops, but really interesting!
+\end{itemize}

@@ -1,0 +1,91 @@
+% setup the document
+\documentclass[b5paper,openany]{book}
+
+% setup variables ------------------------------
+
+% your name
+\newcommand\instructor{Mark Wales}
+
+% the week number
+\newcommand\weekno{3}
+
+% week main title
+\newcommand\maintitle{Programming Fundamentals}
+
+% week subtitle
+\newcommand\subtitle{with JavaScript}
+
+% link to notes - relative to github.com/develop-me/
+\newcommand\github{week-03--programming-fundamentals/blob/master/notes/}
+
+% setup functions, styling, etc.
+\input{../../templates/template.tex}
+
+% the structure of the document
+\begin{document}
+
+% render the title page (uses variables above)
+\tp
+
+% a quote page to start
+\quotepage{The greatest teacher failure is.}{Yoda}
+
+% generate the table of contents
+\tableofcontents
+
+% the standard preface
+\input{../../templates/preface.tex}
+
+\chapter{The Fundamentals of Programming}
+\input{01/00-fundamentals.tex}
+
+\chapter{Basic Types}
+\input{01/01-types.tex}
+
+\chapter{Variables}
+\input{01/02-variables.tex}
+
+\chapter{Boolean Logic}
+\input{01/03-logic.tex}
+
+\chapter{Conditionals}
+\input{01/04-conditionals.tex}
+
+\chapter{Loops}
+\input{01/05-loops.tex}
+
+
+\chapter{Functions}
+\input{02/01-functions.tex}
+
+\chapter{Advanced Functions}
+\input{02/02-scope.tex}
+
+\chapter{Arrays}
+\input{03/01-arrays.tex}
+
+\chapter{Array Iterator Methods}
+\input{03/02-array-iterator-methods.tex}
+
+\chapter{Objects}
+\input{04/01-objects.tex}
+
+\chapter{The Standard Library}
+\input{04/02-library.tex}
+
+\chapter{Advanced Object Techniques}
+\input{04/03-advanced-objects.tex}
+
+\chapter{Classes}
+\input{04/04-classes.tex}
+
+\nchapter{Glossary}
+\input{glossary.tex}
+
+\nchapter{Additional Resources}
+\input{links.tex}
+
+% standard colophon (uses variables above)
+\input{../../templates/colophon.tex}
+
+\end{document}

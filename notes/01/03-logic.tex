@@ -1,0 +1,144 @@
+\quoteinline{The best thing about a boolean is even if you are wrong, you are only off by a bit}{Anonymous}
+
+Modern digital computers\footnote{\href{https://en.wikipedia.org/wiki/Analog_computer}{Analogue computers} are another matter} use \textbf{boolean} logic: true and false. Because these are such fundamental ideas in computing, JavaScript has the special \texttt{true} and \texttt{false} values (lowercase, no quotation marks).
+
+\begin{minted}{javascript}
+    // setting variables to boolean values
+    let news = true;
+    let lies = false;
+
+    // don't use strings!
+    let fakeNews = "false"; // as far as JS is concerned, this is true
+\end{minted}
+
+\pagebreak
+
+\section{Equality}
+
+The ideas of \texttt{true} and \texttt{false} are most useful when it comes to comparing things.
+\\
+
+We can compare things with various operators:
+\\
+
+\begin{small}
+    \begin{tabu}{c l X}
+        \textbf{Operator} & \textbf{Name} & \textbf{Description} \\
+        \texttt{===} & strict equality & \texttt{true} if the values are the same \\
+        \texttt{!==} & non-equality & \texttt{false} if the values are the same\\
+        \texttt{<} & less than & \texttt{true} if the first value is less than the second value  \\
+        \texttt{>} & greater than & \texttt{true} if the first value is greater than the second value\\
+        \texttt{<=} & less than or equal to & \texttt{true} if the first value is less than or equal to the second value  \\
+        \texttt{>=} & greater than or equal to & \texttt{true} if the first value is greater than or equal to the second value
+    \end{tabu}
+\end{small}
+
+\par\bigskip
+
+For example:
+
+\begin{minted}{javascript}
+    10 === 10;   // true
+    10 === 12;   // false
+    "12" === 12; // false - a string is not a number
+    10 <= 12;    // true
+    10 < 10;     // false
+    10 >= 12;    // false
+    10 > 9;      // true
+    10 !== 14;   // true
+\end{minted}
+
+\pagebreak
+
+\begin{infobox}{Sort of Equal}
+    In many languages if you tried to compare a string and a number they'd think you were mad. But JavaScript isn't fussy about what types of things your variables store. That means you can compare different sorts of things and JavaScript will give it a go.
+    \\
+
+    Because of this JavaScript also has the \texttt{==} and \texttt{!=} operators. These \textbf{type cast}: they convert one or the other side of the operator to be the same sort of thing as the other side before checking if the values are the same.
+    \\
+
+    This lets you do things like \texttt{12 == "12"} and get \texttt{true} back.
+    \\
+
+    This might seem really useful, but using it suggests you don't know what types of values you're dealing with, which means you don't really understand what your code is doing. So you should stick to \texttt{===}, which first checks if both values are the same type and immediately returns \texttt{false} if they aren't.
+\end{infobox}
+
+
+\section{Logic Rules}
+
+There are a number of operators that we can use when working with boolean values, these represent the key rules of boolean logic: \textbf{and}, \textbf{or}, and \textbf{not}.
+
+\subsection{and (\texttt{\&\&})}
+
+If either value is \texttt{false}, the result is \texttt{false}:
+
+\begin{minted}{javascript}
+    true && true; // true
+    false && true; // false
+    true && false; // false
+    false && false; // false
+
+    (10 > 12) && (1 < 2); // false
+    (10 < 12) && (1 < 2); // true
+    (10 > 12) && (1 > 2); // false
+\end{minted}
+
+If you think about the phrase ``My name is Mark and I live in Bristol'', we'd say that the whole phrase is false if either (or both) of the sides are false: ``My name is Brian and I live in Bristol'' is false, even though the right side is true. The phrase as a whole can only be true if both sides are true.
+
+
+\subsection{or (\texttt{||})}
+
+If either value is \texttt{true}, the result is \texttt{true}:
+
+\begin{minted}{javascript}
+    true || true; // true
+    false || true; // true
+    true || false; // true
+    false || false; // false
+
+    (10 === 10) || (2 !== 1); // true
+    (10 === 12) || (1 !== 2); // true
+    (10 >= 12) || (2 <= 1);   // false
+\end{minted}
+
+This one doesn't work quite so well with the common sense notion of ``or''. If you think about the phrase ``My name is Mark or I live in Bristol'', some people might be inclined to think that it's true when exactly one side is true\footnote{This is a useful concept and is known as \textbf{exclusive or} or \href{https://en.wikipedia.org/wiki/Exclusive_or}{XOR}}. However, the standard interpretation in boolean logic is that as long as at least one side of the phrase is true, then the whole phrase is true.
+
+\subsection{not (\texttt{!})}
+
+Reverses the truth value. Turns \texttt{true} to \texttt{false} and \texttt{false} to \texttt{true}:
+
+\begin{minted}{javascript}
+    !true; // false
+    !false; // true
+
+    !!true; // true
+    !(10 > 12); // true
+    !!(10 > 12); // false
+\end{minted}
+
+Notice that \texttt{not} is a \textbf{unary} operator: it only takes a single value.
+
+\pagebreak
+
+\begin{infobox}{Casting to Boolean}
+    When we use \texttt{!} twice, it first flips the boolean value (either from \texttt{true} to \texttt{false} or vice versa) and then flips it again, so you end up with the original boolean value.
+    \\
+
+    This is completely pointless if the values are already boolean, but it can be useful for casting a non-boolean value to a boolean:
+
+    \begin{minted}{javascript}
+        !!0;       // false
+        !!10;      // true
+        !!"";      // false
+        !!"false"; // true
+    \end{minted}
+
+\end{infobox}
+
+
+\section{Additional Resources}
+
+\begin{itemize}[leftmargin=*]
+    \item \href{https://felix-kling.de/js-loose-comparison/}{JavaScript ``Loose'' Comparison Step by Step}
+    \item \href{https://dorey.github.io/JavaScript-Equality-Table/}{JavaScript Equality Table}
+\end{itemize}

@@ -1,0 +1,54 @@
+\documentclass[b5paper,openany]{book}
+
+\newcommand\maincolor{blue}
+\newcommand\notesurl{https://github.com/develop-me/book-marks/blob/develop/week-03--programming-fundamentals/notes/}
+
+\input{../../template.tex}
+
+% pdf metadata
+\hypersetup{
+    pdfinfo={
+        Title={Week 3},
+        Subject={Programming Fundamentals with JavaScript}
+    }
+}
+
+\begin{document}
+
+\tp{Sample}{Programming Fundamentals}{with JavaScript}
+
+\input{sample.tex}
+
+\quotepage{The greatest teacher failure is.}{Yoda}
+
+\tableofcontents
+
+\input{../../preface.tex}
+
+\chapter{The Fundamentals of Programming}
+\input{01/00-fundamentals.tex}
+
+\chapter{Basic Types}
+\input{01/01-types.tex}
+
+\chapter{Variables}
+\input{01/02-variables.tex}
+
+\chapter{Boolean Logic}
+\input{01/03-logic.tex}
+
+\chapter{Conditionals}
+\input{01/04-conditionals.tex}
+
+\chapter{Loops}
+\input{01/05-loops.tex}
+
+\nchapter{Glossary}
+\input{glossary.tex}
+
+\nchapter{Additional Resources}
+\input{links.tex}
+
+\input{../../colophon.tex}
+
+\end{document}

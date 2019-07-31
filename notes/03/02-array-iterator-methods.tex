@@ -1,0 +1,245 @@
+Because we almost always want to loop over an array, JS has some built in functions for looping over arrays in commonly used ways. This saves us from writing the boilerplate for a \texttt{for} loop every time.
+\\
+
+We're going to look at:
+
+\begin{itemize}
+    \item \texttt{forEach}
+    \item \texttt{find}
+    \item \texttt{\textbf{filter}}
+    \item \texttt{some}
+    \item \texttt{every}
+    \item \texttt{\textbf{map}}
+    \item \texttt{\textbf{reduce}}
+\end{itemize}
+
+These can (and \textit{should}) be used in place of a \texttt{for} loop.
+\\
+
+All of the iterator methods \textit{accept a function as their first argument}. Remember, functions are values just like any other type in JavaScript, so we can pass them as arguments to functions too.\footnote{Functions that accept or return other functions are called \textbf{Higher-Order Functions}.}
+\\
+
+So far you've always called the function yourself, but the iterator methods \textit{call the function for you}. This can take a bit of getting used to, but – once you get the hang of it – you'll write much more elegant array iterating code.
+
+
+\pagebreak
+
+\begin{infobox}{Performance vs Elegance}
+    There are some posts on the internet that will tell you to always use a \texttt{for} loop as it is much more performant than using the iterator methods. While it is true that the iterator methods are not quite as quick as using a \texttt{for} loop, that's no reason not to use them.
+    \\
+
+    Firstly, underlying performance can be optimised: how different bits of code perform is always being worked on by the people working on the JavaScript engines in browsers. Secondly, they're both incredibly quick: if you're app is having performance issues then there are probably much bigger issues to sort out than using the array iterator methods. And lastly, your main aim when writing code should be to make it maintainable: that means easy to understand and make changes to. The iterator methods are much tidier than using a \texttt{for} loop.
+
+    \quoteinline{Programmers waste enormous amounts of time thinking about, or worrying about, the speed of non-critical parts of their programs, and these attempts at efficiency actually have a strong negative impact when debugging and maintenance are considered. We should forget about small efficiencies: premature optimization is the root of all evil.}{Donald Knuth}
+\end{infobox}
+
+
+\section{\texttt{forEach}}
+
+\texttt{forEach} goes over each item in the array. You can always use it instead of a \texttt{for} loop for iterating arrays.
+
+\begin{minted}{javascript}
+    let numbers = [1, 2, 3, 4, 5, 6];
+
+    numbers.forEach(val => console.log(val));
+    numbers.forEach((val, index) => console.log(index));
+\end{minted}
+
+This is tidier than using a \texttt{for} loop and is the preferred method. Although, more often than not, \texttt{filter}, \texttt{map}, and \texttt{reduce} can be used to create more succinct code.
+
+
+
+\section{\texttt{find}}
+
+\texttt{find} goes over every item in an array until it finds the first value that returns \texttt{true} when passed into the given function\footnote{A function that returns \texttt{true} or \texttt{false} for a given value is sometimes called a \textbf{predicate}.}, it then returns the value it found.
+
+\begin{minted}{javascript}
+    let words = ["fish", "cow", "wombat"];
+
+    // each item in the array is passed into the function
+    // returns the first value in the array for which
+    // the given function returns true
+    let result = words.find(word => word.length === 3); // "cow"
+\end{minted}
+
+
+
+\section{\texttt{filter}}
+
+\texttt{filter} can be used to remove items from an array:
+
+\begin{minted}{javascript}
+    let numbers = [1, 2, 3, 4, 5, 6];
+
+    // iterates over an array passing each value into the supplied function
+    // removes any items that the function returns false for
+    let evenNumbers = numbers.filter(val => val % 2 === 0);
+
+    console.log(evenNumbers); // [2, 4, 6]
+\end{minted}
+
+Iterates over an array and returns a new array containing the \textbf{same number or fewer} items.
+\\
+
+If the given function takes two arguments the second one will be the current index.
+\\
+
+\begin{infobox}{Some \& Every}
+    There are also \texttt{some} and \texttt{every} methods which work like \texttt{filter}. \texttt{some} returns \texttt{true} if any of the test functions return \texttt{true}. \texttt{every} returns \texttt{true} if all of the test functions return \texttt{true}.
+\end{infobox}
+
+
+
+\section{\texttt{map}}
+
+\texttt{map} transforms each value in array to another value:
+
+\begin{minted}{javascript}
+    let numbers = [1, 2, 3, 4, 5, 6];
+
+    // iterates over an array passing each item into the supplied
+    // function transforms the value using the supplied function
+    let squares = numbers.map(val => val * val);
+
+    console.log(squares); // [1, 4, 9, 16, 25, 36]
+\end{minted}
+
+Iterates over an array and returns a new array containing the \textbf{same} number of items.
+\\
+
+If the given function takes two arguments the second one will be the current index.
+
+
+
+\section{\texttt{reduce}}
+
+\texttt{map} and \texttt{filter} always return an array. However, it's often useful to turn an array into some other value type.
+\\
+
+\texttt{reduce} turns an array into a single value:
+
+\begin{minted}{javascript}
+    let numbers = [1, 2, 3, 4, 5, 6];
+
+    // iterates over the array, passing in previous return value and new
+    // value - the final value is the return value from the final iteration
+    // the value of total the first time it runs is 0, reduce's second argument
+    let sum = numbers.reduce((total, val) => total + val, 0);
+
+    console.log(sum); // 21
+\end{minted}
+
+Iterates over an array and returns some value (number, string, boolean, array, object, function, etc.).
+\\
+
+Unlike the other iterator methods, \texttt{reduce} takes a second argument. This represents the \textbf{initial value}: the value that the first argument passed to the function will take on the first iteration.
+\\
+
+If the given function takes \textit{three} arguments the \textit{third} one will be the current index.
+\\
+
+Make sure you use both of the first two arguments inside the function you pass to \texttt{reduce}, otherwise you don't need a reduce.
+
+\subsection{Default Value}
+
+If you do not pass in an initial value as the second argument to \texttt{reduce}, JavaScript will automatically use the \textit{first} value in the array. It will also skip the first item in the array when iterating, as if doing a \texttt{for} loop that starts at index \texttt{1}.
+\\
+
+You should be careful relying on the default value: if the array happens to be empty you will get a JavaScript error, which will stop the rest of your code from running. There are a few occasions where it can be slightly more efficient to not provide the default value, but it's a minor performance improvement for a potentially broken app.
+
+
+
+\section{Which Iterator Method?}
+
+Firstly, you can only use iterator methods on arrays, so if you're not working with an array, you can't use the iterator methods (although, if you're sneaky, you might be able to turn the problem into one involving arrays).
+
+\begin{itemize}
+    \item Do you need to filter out some values? Use \texttt{filter}
+    \item Do you need to transform each value? Use \texttt{map}
+    \item Do you need to turn the array into some other value? Use \texttt{reduce}
+    \item Do you need to turn the array into another array, but which isn't just filtered or mapped? Use \texttt{reduce}
+    \item Do you just need to run some code, but you're not interested in getting back a result? Use \texttt{forEach}
+\end{itemize}
+
+You shouldn't ever need to use a \texttt{for} loop for working with arrays.
+
+
+\pagebreak
+
+\section{Functional Programming}
+
+The beauty of the iterator methods is that we can use functions that we've already written:
+
+\begin{minted}{javascript}
+    let numbers = [1, 2, 3, 4, 5, 6];
+
+    let sum = numbers.reduce((total, val) => total + val, 0);
+\end{minted}
+
+The function we've passed into sum is just a function that takes two arguments and adds them together - which is what \texttt{add} did:
+
+\begin{minted}{javascript}
+    let numbers = [1, 2, 3, 4, 5, 6];
+    let add = (a, b) => a + b;
+
+    let sum = numbers.reduce(add, 0);
+\end{minted}
+
+So rather than passing in anonymous functions, we can \textit{reuse functions we've already written}. This is one of the key ideas behind \textbf{functional programming}.
+
+
+\pagebreak
+
+\begin{infobox}{Range}
+
+    We can only use the iterator methods if we have an array to work with, which won't always be the case. For example, say you just want to do something 100 times: unless you have an array with 100 things in lying around you'll still need to use a \texttt{for} loop.
+    \\
+
+    For the \texttt{for} loop averse, there is a way to turn \textit{any} looping problem into an array iterator method:
+
+    \begin{minted}{javascript}
+    let range = (start, end, increment) => {
+        let arr = [];
+
+        // allows us to ignore the increment argument
+        increment = increment ? increment : 1;
+
+        for (let i = start; i <= end; i += increment) {
+            arr.push(i);
+        }
+
+        return arr;
+    };
+    \end{minted}
+
+    Now we can use the \texttt{range()} function to create an array of arbitrary length:
+
+    \begin{minted}{javascript}
+        // get all the numbers between 1 and 100 that are divisble by 5 or 9
+        let div5Or9 = range(1, 100).filter(i => i % 5 === 0 || i % 9 === 0);
+
+        // all the numbers between 3 and 100 that are divisble by 3
+        let div3 = range(3, 100, 3);
+    \end{minted}
+
+    A function like \texttt{range} is included in many popular JS libraries - so in the real world you wouldn't need to write it yourself.
+\end{infobox}
+
+\pagebreak
+
+\section{Additional Resources}
+
+\begin{itemize}[leftmargin=*]
+    \item \href{https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter}{JavaScript's Map, Reduce, and Filter}
+    \item \href{https://medium.com/jsguru/javascript-functional-programming-map-filter-and-reduce-846ff9ba492d}{JavaScript Functional Programming: Map, Filter, and Reduce}
+    \item \href{https://css-tricks.com/an-illustrated-and-musical-guide-to-map-reduce-and-filter-array-methods/}{An Illustrated (and Musical) Guide to Map, Reduce, and Filter Array Methods}
+    \item \href{https://dev.to/ycmjason/how-to-create-range-in-javascript-539i}{How to create range in JavaScript}
+    \item \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter}{MDN: Filter}
+    \item \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map}{MDN: Map}
+    \item Reduce
+        \begin{itemize}
+            \item \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce}{MDN: Reduce}
+            \item \href{https://jrsinclair.com/articles/2019/functional-js-do-more-with-reduce/}{How to use array reduce for more than just numbers}
+            \item \href{https://jrsinclair.com/articles/2019/five-ways-to-average-with-js-reduce/}{Five ways to calculate an average with array reduce}
+        \end{itemize}
+\end{itemize}

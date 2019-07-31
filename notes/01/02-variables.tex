@@ -1,0 +1,203 @@
+Variables are a way of storing a value using a name so that we can refer to it later.
+\\
+
+This serves two purposes:
+
+\begin{enumerate}
+    \item We can store the results of complex calculations so that we only have to calculate them once
+    \item If we're sensible about what we call our variables it makes our code much easier to follow
+\end{enumerate}
+
+Before we use a variable we must \textbf{declare} it using the \texttt{let} keyword:
+
+\begin{minted}{javascript}
+    let email;
+    let age;
+\end{minted}
+
+Declaring a variable lets JavaScript know that from that point on, if we use that series of characters in our code, it represents a value.
+\\
+
+Once we've declared the variable, we can \textbf{assign} it a value:
+
+\begin{minted}{javascript}
+    email = "orb@is.horse";
+    age = 32;
+\end{minted}
+
+\pagebreak
+
+We only need to declare a variable once. From that point on we can reassign the value if we want to:
+
+\begin{minted}{javascript}
+    // elsewhere
+    email = "farm@wisdom.com";
+
+    // elserwhere
+    email = "shrimp.heaven@now.plumbing";
+\end{minted}
+
+Once we've stored a value in a variable we can use it to represent that value elsewhere in our code:
+
+\begin{minted}{javascript}
+    let pointless;
+    pointless = email + age; // "shrimp.heaven@now.plumbing32"
+\end{minted}
+
+Generally we declare and assign variables at the same time:\footnote{If you see old JavaScript code that uses \texttt{var}, you will often find all the variables declared at the top of the file and values assigned to them later. This is because of something called ``\href{https://scotch.io/tutorials/understanding-hoisting-in-javascript}{hoisting}''. Luckily it's not necessary if you use \texttt{let}.}
+
+\begin{minted}{javascript}
+    let name = "Archie";
+
+    let age = 4, // can also declare multiple variables in one go
+        houseNumber = 21;
+
+    // using variables
+    let notUseful = age + houseNumber; // 25
+\end{minted}
+
+
+\pagebreak
+
+\begin{infobox}{Variable Types}
+    \texttt{let}\\
+    The most commonly used in modern JS. Use this unless you can think of a good reason not to.
+
+    \begin{minted}{javascript}
+        let value = 10;
+    \end{minted}
+
+    \texttt{const}\\
+    Useful if you want to make sure a value can't be changed, for example if you had a variable that stored some configuration.
+
+    \begin{minted}{javascript}
+        const maxVolume = 10;
+        maxVolume = 11; // Error - can't assign a new value to maxVolume
+    \end{minted}
+
+    \texttt{var}\\
+    Very common in older JS. Works almost identically to \texttt{let} except when it comes to \textbf{scoping}. Stick to \texttt{let} unless you're dealing with legacy code.
+
+    \begin{minted}{javascript}
+    var meh = 10;
+    \end{minted}
+
+\end{infobox}
+
+
+
+\section{Naming Variables}
+
+We can call a variable pretty much anything we want, but it's best to pick something that represents its purpose.
+
+\begin{minted}{javascript}
+    let name = "Ben"; // good
+    let a = 394; // possibly ok for short bits of code
+    let aRidiculouslyLongVariableName = 83; // maybe a bit long
+    let appleSauce = 394; // huh?
+    let name = "Not Ben"; // already used that...
+\end{minted}
+
+A variable name can contain:
+
+\begin{itemize}
+    \item alphanumeric characters
+    \item underscores
+    \item the dollar sign
+\end{itemize}
+
+It cannot:
+
+\begin{itemize}
+    \item contain spaces
+    \item contain hyphens
+    \item start with a number
+    \item be a \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords}{reserved word} (e.g. \texttt{class}, \texttt{let}, \texttt{var}, \texttt{function}, \texttt{if}, and many more)
+\end{itemize}
+
+We tend to use camel-case (lowercase first letter, uppercase beginnings of words - \texttt{likeThis}) - as opposed to snake-case (all lowercase, underscores between words - \texttt{like\_this}). You don't have to, but if you don't your code will look weird to everyone else and your friendship group will slowly dwindle.
+\\
+
+If we pick our variable names sensibly then it's easy to see what our code does:
+
+\begin{minted}{javascript}
+    let username = "potus";
+    let password = "00000000";
+
+    armNuclearWeapons(username, password);
+\end{minted}
+
+If we pick our variables names poorly it can be impossible to work out what's going on:
+
+\begin{minted}{javascript}
+    let a = "potus";
+    let b = "00000000";
+
+    doWhatevs(a, b); // we just started a thermonuclear war - oops!
+\end{minted}
+
+\pagebreak
+
+\begin{infobox}{Comments}
+    It's a good idea to explain unusual parts of your code. You can do this with comments.
+    \\
+
+    If you put \texttt{//} on a line in JavaScript then everything after that will be ignored when your code runs:
+
+    \begin{minted}{javascript}
+        // The number of milliseconds in a year
+        // 1000 * 60 * 60 *  24 * 365.2425
+        let millisecondsPerYear = 31556952000;
+        let another = 12345; // you can comment at the end of a line too
+    \end{minted}
+
+    You can also do multi-line comments using \texttt{/*} and \texttt{*/}. Everything between the opening \texttt{/*} and the closing \texttt{*/} will be ignored.
+    \\
+
+    This can be useful if you need to temporarily disable a bit of code. But \textit{make sure you don't leave unused code lying around once everything is working}.
+
+    \begin{minted}{javascript}
+        /*
+         * The number of milliseconds in a year
+         * Calculated using: 1000 * 60 * 60 24 * 365.2425
+         * Required for date calculations
+         */
+        let millisecondsPerYear = 31556952000;
+    \end{minted}
+
+    The extra \texttt{*} at the beginning of each line isn't necessary - but it looks nicer.
+    \\
+
+    If you change a bit of code, \textit{make sure you update the corresponding comments}: old/incorrect comments are worse than no comments at all.
+\end{infobox}
+
+\pagebreak
+
+\section{Template Strings}
+
+We often want to include something stored in a variable as part of a string.
+\\
+
+One option would be to concatenate the variables:
+
+\begin{minted}{javascript}
+let name = "Chetna";
+let greeting = "Hello " + name + ", how are you?";
+\end{minted}
+
+However, rather than using quotation marks, we can put backticks (\texttt{`}) around our strings. This allows us to \textbf{interpolate} values:
+
+\begin{minted}{javascript}
+let name = "Chetna";
+let greeting = `Hello ${name}, how are you?`;
+\end{minted}
+
+As you can see, we use \texttt{\$\{variable\}} inside the backticks to insert the value contained in a variable.
+
+\section{Additional Resources}
+
+\begin{itemize}[leftmargin=*]
+    \item \href{https://eloquentjavascript.net/01_values.html}{Eloquent JavaScript: Values, Types, and Operators}
+    \item \href{http://exploringjs.com/impatient-js/ch_variables-assignment.html}{JavaScript for Impatient Programmers: Variables \& Values}
+    \item \href{https://developers.google.com/web/updates/2015/01/ES6-Template-Strings#string_substitution}{Template Strings}
+\end{itemize}

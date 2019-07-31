@@ -1,0 +1,112 @@
+\section{Strings}
+
+Under the hood strings are actually objects. That means that strings have various properties and methods:
+
+\begin{minted}{javascript}
+    let str = "A String";
+
+    // properties
+    str.length; // 8
+
+    // parts of a string
+    str.charAt(2); // "S"
+    str.substring(2, 5); // "Str" - start at index 2, end before index 5
+    str.search("tr"); // 3 - found starting at index 3
+    str.search("fr"); // -1 - didn't find it
+
+    // change case
+    str.toLowerCase(); // "a string"
+    str.toUpperCase(); // "A STRING"
+
+    // splitting
+    str.split(" "); // split on space - ["A", "String"]
+    str.split("ri"); // split on "ri" - ["A St", "ng"]
+    str.split(""); // on each character - ["A"," ","S","t","r","i","n","g"]
+\end{minted}
+
+A full list of properties can be found on \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String}{MDN}.
+
+\pagebreak
+
+\section{\texttt{Date}}
+
+The built-in \texttt{Date} object allows you to manipulate dates.
+
+\begin{minted}{javascript}
+    let now = new Date(); // a date object representing now
+
+    // a date representing 5:08 am on 24th August 2018
+    let birthdate = new Date("2018-08-24T05:08:00");
+
+    birthdate.getFullYear(); // 2018
+    birthdate.getDate(); // 24
+    birthdate.getDay(); // 5 (0 - 6, 0 is Sunday and 6 is Saturday)
+    birthdate.getMonth(); // 7 (0 - 11,  0 = January - c'est stupide!)
+    birthdate.getTime(); // 1535083680000
+\end{minted}
+
+Generally it's easier to use a library like \href{http://momentjs.com}{moment.js}.
+
+
+\begin{infobox}{The Beginning of Time}
+    You might be wondering what the \texttt{1535083680000} value from \texttt{.getTime()} represents.
+    \\
+
+    It is, \textit{of course}, the number of milliseconds between the given date and 00:00 GMT on the 1st of January 1970.
+    \\
+
+    For an entertaining look at how computers handle dates, check out \href{https://zachholman.com/talk/utc-is-enough-for-everyone-right}{UTC is enough for everyone, right?}
+\end{infobox}
+
+\pagebreak
+
+\section{\texttt{Math}}
+
+The \texttt{Math} object lets you do more complex mathematical operations:
+
+\begin{minted}{javascript}
+    // Useful properties
+    Math.PI; // 3.141592653589793
+    Math.E; // 2.718281828459045
+
+    // Rounding
+    Math.floor(3.45); // 3
+    Math.ceil(3.45); // 4
+    Math.round(3.45); // 3
+
+    // Exponents
+    Math.sqrt(4); // 2
+    Math.pow(2, 3); // 8
+
+    // Other mathematical functions
+    Math.log(6); // 1.791759469228055
+    Math.cos(45); // 0.5253219888177297
+\end{minted}
+
+\pagebreak
+
+\begin{infobox}{Putting the Java in JavaScript}
+    The \texttt{Date} and \texttt{Math} objects both feel decidedly un-JavaScripty. That's because they were taken directly from Java.
+    \\
+
+    JavaScript was originally going to be called ``Mocha'' and then ``LiveScript''. But Netscape, the creators of JavaScript, settled on ``JavaScript'' after making a deal with Sun, the creators of Java. Sun agreed to give Netscape some money as long as they called their new language ``JavaScript'' to make it sound like a toy version of Java. Sun also insisted that JavaScript include the \texttt{Date} and \texttt{Math} objects from Java - despite the fact that Java and JavaScript have barely anything in common other than that they both ran in a browser.
+    \\
+
+    Ironically JavaScript went on to eclipse Java as the language of choice for apps that would run on any system.
+    \\
+
+    This also means that Oracle, who bought Sun in 2010, own the trademark on the name ``JavaScript''. That's why it's generally referred to as ECMAScript (after the European Computer Manufacturers Association, who control the standard) in any technical documentation.
+    \\
+
+    You can see the origins of the insane \texttt{getMonth()} method on the \href{https://docs.oracle.com/javase/7/docs/api/java/util/Date.html#getMonth()}{Java documentation}
+\end{infobox}
+
+\section{Additional Resources}
+
+\begin{itemize}[leftmargin=*]
+    \item \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math}{MDN: \texttt{Math}}
+    \item \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date}{MDN: \texttt{Date}}
+    \item \href{https://alligator.io/js/date-object/}{The JavaScript \texttt{Date} Object}
+    \item \href{https://css-tricks.com/everything-you-need-to-know-about-date-in-javascript/}{Everything You Need to Know About Date in JavaScript}
+    \item \href{https://medium.com/@toastui/handling-time-zone-in-javascript-547e67aa842d}{Handling Time Zone in JavaScript}
+\end{itemize}

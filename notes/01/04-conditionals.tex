@@ -1,0 +1,228 @@
+\section{\texttt{if} statements}
+
+Computers need to be able to make decisions: if such-and-such is the case then do something. Without this ability we couldn't write programs that do anything other than basic calculations.
+\\
+
+We can use our logic rules in combination with \texttt{if} statements to decide what our program will do:
+
+
+\begin{minted}{javascript}
+    let value = 8;
+    let max = 10;
+
+    if (value <= max) {
+        console.log("Valid"); // this will run
+    }
+\end{minted}
+
+The part inside the \texttt{if} brackets is the \textbf{truth condition}\footnote{Hence ``conditional''} - this will always be evaluated as either \texttt{true} or \texttt{false}. If it evaluates to \texttt{true}, then the block of code will execute, if it evaluates to \texttt{false} then it won't.
+
+
+\subsection{\texttt{else}}
+
+You can also add an \texttt{else} block. If the conditional is \texttt{true} then the first block of code runs, otherwise the second block of code will run.
+
+\begin{minted}{javascript}
+    let username = "mark";
+
+    // the truth condition
+    if (username === "admin") {
+        // this runs if it's true
+        console.log("Hello Admin"); // won't run
+    } else {
+        // this runs if it's false
+        console.log("Unauthorized!"); // will run
+    }
+\end{minted}
+
+
+\subsection{\texttt{else if}}
+
+You can also use \texttt{else if} blocks. These let you check multiple conditions. You can have as many of these as you like.
+\\
+
+As in the previous case, one and only one of these blocks of code will run. If the first condition is \texttt{false} then the first \texttt{else if} condition is checked; if that is also \texttt{false} then it will move onto the next; and so on until it reaches the final \texttt{else} block, which will only run if \textit{all} of the previous conditions have returned \texttt{false}.
+
+\begin{minted}{javascript}
+    let average = (10 + 13 + 15) / 3;
+
+    if (average <= 10) {
+        console.log("Less than 10"); // won't run
+    } else if (average < 20) {
+        console.log("Less than 20"); // will run
+    } else {
+        console.log("20 or more");   // won't run
+    }
+\end{minted}
+
+\pagebreak
+
+If we hadn't included the final \texttt{else} block, then it's possible that none of the code blocks would run:
+
+\begin{minted}{javascript}
+    let average = (30 + 50 + 100) / 3;
+
+    if (average <= 10) {
+        console.log("Less than 10"); // won't run
+    } else if (average < 20) {
+        console.log("Less than 20"); // won't run
+    }
+\end{minted}
+
+
+\begin{infobox}{Truthy \& Falsey Values}
+    Because JavaScript isn't that fussy about types, if you try and use a non-boolean value as a condition it will do its best to make things work:
+
+    \begin{minted}{javascript}
+    let value = "Hello";
+
+    if (value) {
+        // even though the condition isn't a boolean value
+        // this will run as a non-empty string is "truthy"
+    }
+    \end{minted}
+
+    Falsey values (ones that type cast to \texttt{false}) in JavaScript are:
+
+    \begin{itemize}
+        \item \texttt{false}
+        \item \texttt{0}
+        \item \texttt{""} (the empty string)
+        \item \texttt{null}
+        \item \texttt{undefined}
+        \item \texttt{NaN}
+    \end{itemize}
+
+    Everything else is truthy (i.e. it type casts to \texttt{true}).
+\end{infobox}
+
+\pagebreak
+
+\section{The Ternary Operator}
+
+If the blocks of your conditional are both short, it can sometimes save space to use the \textbf{ternary operator}.
+\\
+
+Unlike an \texttt{if} \textbf{statement} the ternary operator is an \textbf{expression}, meaning that it equates to a value.
+
+\begin{minted}{javascript}
+    let current = 3;
+
+    // set the value of next, dependent on the value of current
+    let next = current > 5 ? 0 : current + 1; // next is set to 4
+\end{minted}
+
+Does the same as:
+
+\begin{minted}{javascript}
+    let current = 3;
+    let next;
+
+    if (current > 5) {
+        next = 0;
+    } else {
+        next = current + 1;
+    }
+\end{minted}
+
+The ternary operator consists of three parts:
+
+\begin{enumerate}
+    \item The condition (before the \texttt{?})
+    \item The \textit{if true} result (before the \texttt{:})
+    \item The \textit{if false} result (after the \texttt{:})
+\end{enumerate}
+
+In other words, if the bit before the \texttt{?} is true, then evaluate to the bit before the \texttt{:}, otherwise evaluate to the bit after the \texttt{:}.
+
+\pagebreak
+
+\begin{infobox}{Statements \& Expressions}
+    An \textbf{expression} is any bit of code that equates to some value. If you could assign the whole bit of code to a variable, then it's an expression. An expression can be made up of sub-expressions.
+    \\
+
+    For example, all of the following equate to a value, so they are expressions:
+
+    \begin{minted}{javascript}
+        // equates to 46
+        12 + 34;
+
+        // equates to true
+        ((true && false) || false) === false;
+
+        // equates to some number, assuming celsius is a number
+        (celsius * 9/5) + 32;
+    \end{minted}
+
+    A \textbf{statement} is just an instruction. Things like \texttt{if} statements or variable assignments: they do something, but aren't equal to a value. Statements can be made up of other statements and expressions. All expressions are also statements.
+
+\end{infobox}
+
+\pagebreak
+
+\section{\texttt{switch} Statements}
+
+If your \texttt{if} statement is just a series of checks against the same value, then a \texttt{switch} statement can sometimes save space:
+
+
+\begin{minted}{javascript}
+    let username = "admin";
+
+    switch (username) {
+        case "admin": console.log("Authorized"); break;
+        case "Admin": console.log("Authorized"); break;
+        case "Jeff": console.log("Back door! Authorized"); break;
+        default: console.log("Unauthorized");
+    }
+\end{minted}
+
+We use the \texttt{switch} keyword and then in brackets we put the value we want to check against. Inside the block, we list a series of \texttt{case} statements: if the value in the \texttt{switch} matches a specific \texttt{case} then that case statement will run. It will only run the first matching \texttt{case}. We can also have a \texttt{default} case which works much like an \texttt{else} block: it will run if none of the case statements are true.
+\\
+
+\texttt{switch} statements are neater than multiple \texttt{else if} statements, but make sure you remember to use \texttt{break} at the end of each \texttt{case}, otherwise you'll get unexpected behaviour\footnote{If you don't use \texttt{break} then every \texttt{case} statement below the one that was true will also run. This is called \textbf{fall-through} and is occasionally useful, but if you see it in code it's hard to know whether it's deliberate or not, so it's best not to use it}.
+
+\pagebreak
+
+\begin{infobox}{Indenting}
+
+    You'll notice that all of the code inside the \texttt{if} blocks is indented:
+
+    \begin{minted}{javascript}
+        // anything between the opening and closing
+        // curly braces should be indented
+        if (x === 10) {
+            console.log("x is 10"); // indented
+        } // <-- first block block stops here, so don't indent anymore
+
+        // new block, so indent everything inside the braces
+        if (x < 20) {
+            console.log("Less than 20"); // indented
+
+            // a new block, so indent another level
+            if (average < 20) {
+                console.log("Less than 20"); // indented two times
+            } // <-- end of a block, indent one less
+        } // <-- end of outermost block, so stop indenting
+
+        console.log("Less than 20"); // <-- outside of blocks, not indented
+    \end{minted}
+
+    This makes it clear which bits of the code are part of the if blocks and which bits are not.
+    \\
+
+    Basically, when you get to a \texttt{\{} you should indent another level and when you get to a \texttt{\}} you should de-indent.\footnotemark Your text editor will probably do this for you and, at this stage, it probably knows best.
+    \\
+
+    \textit{Fix indenting problems as soon as you spot them} - it will save you time later!
+\end{infobox}
+
+\footnotetext{Unindent? Outdent? Dent?}
+
+
+\section{Additional Resources}
+
+\begin{itemize}[leftmargin=*]
+    \item \href{https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals}{MDN: Conditionals}
+    \item \href{https://eloquentjavascript.net/02_program_structure.html}{Eloquent JavaScript: Program Structure}
+    \item \href{http://exploringjs.com/impatient-js/ch_control-flow.html}{JavaScript for Impatient Programmers: Control Flow}
+\end{itemize}

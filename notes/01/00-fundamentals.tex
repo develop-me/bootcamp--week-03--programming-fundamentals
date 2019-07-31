@@ -1,0 +1,193 @@
+\quoteinline{The most disastrous thing that you can ever learn is your first programming language}{Alan Kay}
+
+There are four fundamental concepts underpinning \textit{all} programming languages:
+
+\begin{itemize}
+    \item \textbf{Types}: sorts of things
+    \item \textbf{Variables}: remembering things
+    \item \textbf{Conditionals}: deciding things
+    \item \textbf{Loops}: repeating things
+\end{itemize}
+
+We're going to be learning these concepts using JavaScript, but once you understand them you should be able to pick up new programming languages easily.
+
+\pagebreak
+
+\section{The Nature of Programming}
+
+\quoteinline{You might not think that programmers are artists, but programming is an extremely creative profession. It's logic-based creativity.}{John Romero, id Software}
+
+Programming is a skill. And like most skills the only way to get good at it is to \textit{practice}.
+\\
+
+Most people assume that programming is \textit{hard}. But that's like saying playing the guitar is hard: if you've never done it before then, yes, you'll struggle to play anything; but after a few weeks of practice you'll be able to maybe play something simple; and after years of practice you'll be able to play beautifully.
+\\
+
+Programming is the same. To start with you'll probably struggle: there are a lot of new concepts and ways of thinking that your brain has never had to cope with before. After a few weeks you'll be able to write some simple code. And after years and years of practice people will weep at the elegance of your code. Maybe.
+
+
+\section{Node}
+
+When we're first learning to use a programming language it's useful to keep things as simple as possible. Although JavaScript was originally written to run in a web browser, it is also possible to run it in a more ``pure'' form, where we don't have to worry about HTML or CSS. One way to do this is in the browser's \textbf{console}, but we would still need a basic HTML page to load the JavaScript file in the first place.
+\\
+
+We're going to be using \href{https://nodejs.org/}{Node} to run JavaScript in the command-line. This will keep things simple and also allow you to practice using the command-line.
+\\
+
+For our purposes, Node can be run in one of two ways: as a REPL (Read-Eval-Print Loop) or for running a JavaScript file.
+
+\subsection{REPL Mode}
+
+The REPL mode is useful if you want to quickly try something out. To use REPL mode simply type in \texttt{node} to the command-line and press return. You should get a welcome message and then see a \texttt{>} symbol on the left side of the screen. Node is waiting for you to type something.
+\\
+
+If you type in some valid JavaScript and press return, Node will \textit{read} the code, \textit{evaluate} it (i.e. run it) and then \textit{print} the answer (i.e. display it). It will then wait for further input (creating a \textit{loop}).
+\\
+
+You know you're in REPL mode if you can see the \texttt{>} symbol on the left hand side. If you try and run command-line commands (e.g. \texttt{cd}, \texttt{ls}) in this mode you'll get an error as it's almost certainly not valid JavaScript.
+\\
+
+To leave REPL mode you can press \texttt{Ctrl}\footnote{It's \texttt{Ctrl} even on a Mac}+\texttt{c} twice or type type \texttt{.exit} and press return.
+
+
+\subsection{Script Mode}
+
+Script mode lets you run a JavaScript file. It will run through every line of code in the file and then exit back to the command-line. If there are any calls to \texttt{console.log()}, those will be printed on the screen, otherwise you won't see anything.
+\\
+
+If we had a file in the current directory called \texttt{fish.js} we would run it in Node using:
+
+\begin{minted}{bash}
+    node fish.js
+\end{minted}
+
+Make sure you're in command-line mode if you want to run a script. If you've got a \texttt{>} on the left side of your screen, make sure you exit REPL mode first.
+
+\pagebreak
+
+\subsection{Errors}
+
+When something goes wrong in Node you will see an error. \textbf{Errors are your friend}: they normally tell you what you've done wrong. Ignore them at your peril.
+\\
+
+In REPL mode errors are usually fairly easy to understand.
+\\
+
+In script mode they are often harder to grok. Here is a standard Node error:
+
+\begin{minted}[linenos=true]{http}
+    /Volumes/Projects/coding-fellowship/week-03/fish.js:2
+    let fish = cow + wombat;
+                     ^
+
+    ReferenceError: wombat is not defined
+        at Object.<anonymous> (/Volumes/Projects/coding-fellowship/week-03/fish.js:2:18)
+        at Module._compile (internal/modules/cjs/loader.js:774:30)
+        at Object.Module._extensions..js (internal/modules/cjs/loader.js:785:10)
+        at Module.load (internal/modules/cjs/loader.js:641:32)
+        at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+        at Function.Module.runMain (internal/modules/cjs/loader.js:837:10)
+        at internal/main/run_main_module.js:17:11
+\end{minted}
+
+The error is made up of various parts:
+
+\begin{itemize}
+    \item Line 1: tells us the file in which the error occurred (the part before the colon) and the line on which it occurred (the number after the colon). This \textit{should} be the file that you're trying to run, if it's not then see below.
+    \item Line 2: shows you the actual code where the error was.
+    \item Line 3: a little arrow pointing at the exact part of the code that caused the issue (\texttt{wombat}).
+    \item \textbf{Line 5}: what's gone wrong (\texttt{wombat} is not defined). This is the most useful part of the error message as it tells you what you need to do to fix it.
+    \item Line 6+: a \textbf{stack trace}. Shows every bit of code that has run to get to the error. This can be very useful when you're working with multiple files, but for now you can probably ignore it, as it will mostly consist of Node's core files.
+\end{itemize}
+
+\pagebreak
+
+If Line 1 is not a file that you created, then Node probably wasn't able to run your code. This is most likely because the file you are trying to run doesn't exist:
+
+\begin{minted}{http}
+    internal/modules/cjs/loader.js:626
+        throw err;
+        ^
+
+    Error: Cannot find module '/Volumes/Projects/coding-fellowship/week-03/test.js'
+\end{minted}
+
+If you get an error like this make sure the file exists in the current directory.
+
+\begin{infobox}{Command-Line Fu}
+    A few useful commands:
+
+    \begin{itemize}
+        \item \texttt{ls}: show all the files in the current directory
+        \item \texttt{pwd}: shows the ``present working directory'' - e.g. the directory that you are in
+    \end{itemize}
+
+    It's also worth noting that if you press \textbf{up} on your keyboard it will bring up the previous command - which you'll be needing a lot to start with.
+    \\
+
+    Also be sure to use the \textbf{tab} key to auto-complete directories and filenames. This will also stop you trying to load files that don't exist.
+\end{infobox}
+
+
+
+\section{Hello, World!}
+
+It is traditional to write a ``Hello, world'' program before going any further.
+\\
+
+Put the following in a file named \texttt{hello-world.js}:
+
+\begin{minted}{javascript}
+console.log("Hello, world!"); // Hello, world!
+\end{minted}
+
+Next, in the command-line go to the same directory as the file you just created and run \texttt{node hello-world.js}.
+\\
+
+Congratulations, you're now a programmer!
+
+\newpage
+
+\begin{infobox}{Hello, world?}
+    We use the "Hello, world!" app because it lets us compare the same functionality between different languages.
+    \\
+
+    For example, here it is in PHP:
+
+    \begin{minted}{php}
+        <?php
+        echo "Hello, world!";
+    \end{minted}
+
+    In Java:
+
+    \begin{minted}{java}
+        public class HelloWorld
+        {
+            public static void main(String[] args)
+            {
+                System.out.println("Hello, world!");
+            }
+        }
+    \end{minted}
+
+    And Haskell:
+
+    \begin{minted}{haskell}
+        main :: IO ()
+        main = putStrLn "Hello, world!"
+    \end{minted}
+
+    Just by looking at these few lines of code you can work out quite a lot about a language: PHP seems to need to be told that it's PHP, Java is a tad verbose, and Haskell is\ldots\ different.
+    \\
+
+    You can see ``Hello, world'' in almost every programming language on \href{https://rosettacode.org/wiki/Hello_world/Text}{Rosetta Code}
+\end{infobox}
+
+
+\section{Additional Resources}
+
+\begin{itemize}[leftmargin=*]
+    \item \href{https://javascriptweekly.com/link/66136/f8cbfdb908}{The Weird History of JavaScript}
+    \item \href{https://www.redhat.com/en/command-line-heroes/season-3/creating-javascript}{Command-Line Heroes Podcast: Creating JavaScript}
+\end{itemize}

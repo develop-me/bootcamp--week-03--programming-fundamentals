@@ -1,0 +1,216 @@
+\section{Destructuring}
+
+\textbf{Destructuring} allows us to pull property values out of an object and into variables of the same name as the original property:
+
+\begin{minted}{javascript}
+    let person = {
+        firstName: "Mark",
+        lastName: "Wales",
+        age: 67,
+    };
+
+    // creates the firstName and lastName variables
+    // from those properties of person
+    let { firstName, lastName } = person;
+\end{minted}
+
+When passing an object to a function we can use destructuring syntax in the function parameters, which an make the function a bit tidier:
+
+\begin{minted}{javascript}
+    // destructure in the parameters
+    let fullName = ({ firstName, lastName }) => firstName + " " + lastName;
+
+    fullName(person); // "Mark Wales"
+\end{minted}
+
+\pagebreak
+
+Without:
+
+\begin{minted}{javascript}
+    let fullName = ob => ob.firstName + " " + ob.lastName;
+\end{minted}
+
+We need to be careful if we try to use destructuring on two objects with the same property names at the same time, as they would need to use the same variable name:
+
+\begin{minted}{javascript}
+    // creates the firstName and lastName variables from
+    // those properties of person
+    let { firstName, lastName } = person1;
+
+    // won't work, because firstName and lastName already taken
+    let { firstName, lastName } = person2;
+\end{minted}
+
+It is possible to avoid this issue by assigning new variable names during the destructuring:
+
+\begin{minted}{javascript}
+    let { firstName: p2FirstName, lastName: p2LastName } = person2;
+
+    console.log(p2FirstName);
+    console.log(p2LastName);
+\end{minted}
+
+
+\section{The Spread Operator}
+
+The spread operator with objects is similar to the array spread operator. It lets us create a copy of an object:
+
+\begin{minted}{javascript}
+    let person = {
+        name: "Sandy",
+        age: 54,
+    };
+
+    // creates a copy of person
+    let copied = { ...person };
+\end{minted}
+
+\pagebreak
+
+We can also change a property whilst copying:
+
+\begin{minted}{javascript}
+    let person = {
+        name: "Sandy",
+        age: 54,
+    };
+
+    // creates a copy of person and changes the age property
+    let copied = { ...person, age: 55 };
+\end{minted}
+
+And we can merge two objects together:
+
+\begin{minted}{javascript}
+    let personProps = {
+        name: "Sandy",
+        age: 54,
+    };
+
+    let otherPersonProps = {
+        name: "Noel",
+        favouriteColour: "orange",
+    };
+
+    // merges two objects
+    // the second object overwrites any matching properties of the first
+    let merged = { ...personProps, ...otherPersonProps };
+    // gives us: { name: "Noel", age: 54, favouriteColour: "orange"}
+\end{minted}
+
+As with arrays, this can be useful if we need to make sure we're not changing the original object.
+
+\pagebreak
+
+This can get quite sophisticated if you have a complex hierarchy of objects (and arrays):
+
+\begin{minted}{javascript}
+    let data = {
+        name: "Heena",
+        age: 43,
+        address: {
+            street: "12 Flamingo Road",
+            town: "Newcastle",
+        }
+    };
+
+    // to update the town property...
+    let newData = {
+        ...data, // first copy all of the properties of data
+        // we need to update the address object too
+        address: {
+            ...data.address, // copy across all the address properties
+            town: "Liverpool", // update the value we want to change
+        }
+    }
+\end{minted}
+
+
+
+\section{Keys and Values}
+
+It is sometimes useful to get just the keys or values of an object. To do this we can use the \texttt{Object.keys()} and \texttt{Object.values()} functions:
+
+\begin{minted}{javascript}
+    let person = {
+        firstName: "Mark",
+        lastName: "Wales",
+    };
+
+    let keys = Object.keys(person);
+    let values = Object.values(person);
+
+    console.log(keys); // ["firstName", "lastName"]
+    console.log(values); // ["Mark", "Wales"]
+
+    keys.forEach(key => console.log(person[key]));
+\end{minted}
+
+These are useful when you treat an object more like an array: as a collection of the same sorts of thing.
+\\
+
+This can be useful as it allows us to immediately access an item based on its key without having to go over every item in the structure:
+
+\begin{minted}{javascript}
+    let people = {
+        345: {
+            id: 345,
+            name: "Ta-Nehisi",
+            age: 43,
+        },
+        789: {
+            id: 789,
+            name: "Reni",
+            age: 29,
+        }
+    };
+\end{minted}
+
+When objects are used this way we call them \textbf{maps}\footnote{Modern JavaScript actually has a \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map}{\texttt{Map}} type built in, but it's not used much}.
+
+\pagebreak
+
+\section{Map, Filter, \& Reduce}
+
+If you have an array of objects you can do all sorts of data manipulation using \texttt{map}, \texttt{filter}, and \texttt{reduce}.
+
+\begin{minted}{javascript}
+    let people = [{
+        id: 345,
+        name: "Ta-Nehisi",
+        age: 43,
+    }, {
+        id: 789,
+        name: "Reni",
+        age: 29,
+    }];
+
+    // find all the people age 30 or over
+    let over30s = people.filter(person => person.age >= 30);
+
+    // return an array of just the names
+    let names = people.map(person => person.name);
+
+    // return the oldest person
+    let oldest = people.reduce((oldest, person) => (
+        person.age > oldest.age ? person : oldest
+    ) , people[0]);
+\end{minted}
+
+We could even use destructuring for the \texttt{filter} and \texttt{map}:
+
+\begin{minted}{javascript}
+    let over30s = people.filter(({age}) => age >= 30);
+    let names = people.map(({name}) => name);
+\end{minted}
+
+We can't use destructuring for the \texttt{reduce} as we need to return the full object.
+
+\section{Additional Resources}
+
+\begin{itemize}[leftmargin=*]
+    \item \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment}{MDN: Object Destructuring}
+    \item \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names}{MDN: Computed Property Names}
+    \item \href{https://hacks.mozilla.org/2015/05/es6-in-depth-destructuring/}{ES6: In Depth Destructuring}
+\end{itemize}

@@ -1,0 +1,365 @@
+Sometimes it's useful to work with multiple bits of data that are related in some way. In order to do this we'll need \textbf{data structures}: more complex types that allows us to more than one piece of data.
+\\
+
+Arrays are ordered collections of values. It's probably easiest to think of them as being a list of values\footnote{It's worth noting that in some programming languages there are different types of list, that have different performance characteristics}.
+\\
+
+We can create an array using square brackets and put in values separated by commas:
+
+\begin{minted}{javascript}
+    let values = []; // an empty array
+
+    let numbers = [1, 2, 3, 4, 5, 6, 7]; // an array of numbers
+
+    let animals = [
+        "cow",
+        "chicken",
+        "fish",
+        "wombat"
+    ]; // an array of strings
+\end{minted}
+
+Arrays can contain any of the value types: numbers, strings, booleans, functions, objects (which we'll look at later), and, of course, other arrays.
+\\
+
+\pagebreak
+
+JavaScript isn't fussy about types, so a single array can contain different types of values:
+
+\begin{minted}{javascript}
+    // this is totally fine in JavaScript
+    let nope = [1, "fish", n => n * n, [1, 2, 3], true];
+\end{minted}
+
+However, just because you \textit{can}, doesn't mean you \textit{should}. When we're working with arrays we almost always want to go over every value in the array and run the same bit of code for each one. If you start having different types of values in your array you're going to end up with a lot of conditionals. So, \textit{an array should use the same type for all its values}.
+\\
+
+
+\begin{infobox}{Multi-Dimensional Arrays}
+    An array containing other arrays is often called a \textbf{multi-dimensional array} as it can represent multi-dimensional values. For example, an array of arrays can represent a table:
+
+    \begin{minted}{javascript}
+        let table = [
+            [1, 2, 3], // first row
+            [4, 5, 6], // second row
+            [7, 8, 9], // third row
+         ];
+    \end{minted}
+
+    An array of arrays of arrays can represent three-dimensional structure; four levels deep can represent a four-dimensional structure (e.g. an animated 3D object); and so on.
+\end{infobox}
+
+\pagebreak
+
+\section{Adding Values}
+
+We can add items to the end of the array:
+
+\begin{minted}{javascript}
+    values.push("a"); // ["a"]
+    numbers.push(8); // [1, 2, 3, 4, 5, 6, 7, 8]
+    animals.push("cat"); // ["cow", "chicken", "fish", "wombat", "cat"]
+\end{minted}
+
+And to the beginning:
+
+\begin{minted}{javascript}
+    values.unshift("g"); // ["g", "a"]
+    numbers.unshift(0); // [0, 1, 2, 3, 4, 5, 6, 7, 8]
+\end{minted}
+
+It's important to note that these \textit{change the original array}.
+
+
+\section{Reading Values}
+
+You can reading values from an array using square brackets and passing in the \textbf{index} of the item you want. Arrays are \textbf{zero-indexed}\footnote{This is true in most languages and goes back to when computers had tiny amount of memory and every bit was precious. The language \href{https://www.lua.org}{Lua} starts indexes at 1 by default.}, which means the first item has index \texttt{0}:
+
+\begin{minted}{javascript}
+    let animals = ["cow", "chicken", "fish", "wombat"];
+    animals[0]; // "cow" - arrays are "zero-indexed"
+    animals[2]; // "fish"
+\end{minted}
+
+Reading values this way does \textit{not} change the array.
+\\
+
+Getting values out of the array, changing the array:
+
+\begin{minted}{javascript}
+    let animals = ["cow", "chicken", "fish", "wombat"];
+    let last = animals.pop(); // "wombat" - removed from end of array
+    let first = animals.shift(); // "cow" - removed from beginning of array
+
+    console.log(animals); // ["chicken", "fish"]
+\end{minted}
+
+\pagebreak
+
+
+\section{Length}
+
+We can use the \texttt{.length} property to find out how many items there are in an array.
+
+\begin{minted}{javascript}
+    let animals = ["cow", "chicken", "fish", "wombat"];
+    console.log(animals.length); // 4
+
+    let values = [17, 12];
+    console.log(values.length); // 2
+\end{minted}
+
+Note that \texttt{.length} is a \textbf{property}, not a function, so it doesn't require brackets to get the value. We'll learn more about properties tomorrow.
+
+
+
+\section{Iterating}
+
+So, how could we do something with every item in an array?
+
+\begin{itemize}
+    \item We know how long an array is using \texttt{.length}
+    \item We know we can read individual items using \texttt{arr[0]}, \texttt{arr[1]}, \texttt{arr[2]}, etc
+\end{itemize}
+
+We can use a \texttt{for} loop to do something with every item in an array. This is called \textbf{iterating} over an array.
+\\
+
+If an array has a \texttt{.length} of \texttt{5}, then we know that the indexes will go from \texttt{0} to \texttt{4}. And we know we can access a specific index using the \texttt{values[0]} (where \texttt{0} is the index) notation. So, we just need to loop from \texttt{0} to \texttt{4} and get back that index:
+
+
+\begin{minted}{javascript}
+let animals = ["cow", "chicken", "fish", "wombat", "kangaroo"];
+
+// start at 0, because arrays are zero-indexed
+// finish one less than the length of array
+// so, this will loop i from 0 to 4
+for (let i = 0; i < animals.length; i += 1) {
+    let current = animals[i];
+    console.log(current);
+}
+
+// "cow", "chicken", "fish", "wombat", "kangaroo"
+\end{minted}
+
+\pagebreak
+
+We could, for example, use this to add up all the values in an array:
+
+\begin{minted}{javascript}
+let values = [1, 2, 3, 4, 5, 6];
+
+// keep track of the cumulative total
+let total = 0;
+
+// iterate over each item in the array
+// adding it to total
+for (let i = 0; i < values.length; i += 1) {
+    let current = values[i];
+    total += current; // the value of total will go up each iteration
+}
+
+console.log(total); // 21
+\end{minted}
+
+
+Or we could use it to create a new array without odd numbers:
+
+\begin{minted}{javascript}
+let values = [1, 2, 3, 4, 5, 6];
+
+// an array to put the even numbers into
+let even = [];
+
+// iterate over each item in the array
+for (let i = 0; i < values.length; i += 1) {
+    let current = values[i];
+
+    // if the value is even add it to the even array
+    if (current % 2 === 0) {
+        even.push(current);
+    }
+}
+
+console.log(even); // [2, 4, 6]
+\end{minted}
+
+\pagebreak
+
+\section{All For One and One For All}
+
+Although an array \textit{contains} multiple values, we treat it like a single value:
+
+\begin{minted}{javascript}
+    // we store it in a single variable
+    let x = [1, 2, 3, 4, 5, 6];
+\end{minted}
+
+A function being passed arrays is being passed however many \textit{arrays} it is called with, not the number of items in the array:
+
+\begin{minted}{javascript}
+    // when we pass it to a function it is a single value
+    let total = (arr) => {
+        let sum = 0;
+
+        for (let i = 0; i < arr.length; i += 1) {
+            let current = arr[i];
+            sum += current;
+        }
+
+        return sum;
+    }
+
+    // even though this array contains 6 values
+    // it gets passed to the function as a single value
+    // it's the number of arrays passed in that matters
+    total([1, 2, 3, 4, 5, 6]);
+\end{minted}
+
+This is very useful as it lets us create functions that can deal with as many values as we like: we can pass in an array with one value, a hundred values, two values, or even no values and the function should work.
+
+\pagebreak
+
+\section{Useful Operations}
+
+\subsection{Sorting}
+
+We can sort an array alphabetically:
+
+\begin{minted}{javascript}
+let values = ["b", "c", "a", "d"];
+values.sort();
+
+console.log(values); // ["a", "b", "c", "d"]
+\end{minted}
+
+However, this won't be much use if you want to sort numbers:
+
+\begin{minted}{javascript}
+let values = [9, 11, 40, 112, 89, 380];
+values.sort();
+
+// sorts numbers alphabetically
+console.log(values); // [11, 112, 380, 40, 89, 9]
+\end{minted}
+
+
+\subsection{Merging Arrays}
+
+We can merge two arrays:
+
+\begin{minted}{javascript}
+let v1 = [1, 2, 3, 4];
+let v2 = [3, 4, 5, 6];
+let merged = v1.concat(v2);
+
+console.log(merged); // [1, 2, 3, 4, 3, 4, 5, 6]
+\end{minted}
+
+\subsection{Turning Arrays into Strings}
+
+It's often useful to join an array of string into a single string:
+
+\begin{minted}{javascript}
+    let letters = ["a", "b", "c", "d"];
+    let alphabet = letters.join(" - ");
+
+    console.log(alphabet); // "a - b - c - d"
+\end{minted}
+
+You could pass an empty string in to \texttt{.join("")} which would join the strings with nothing between.
+
+\subsection{Finding a Specific Value}
+
+Finding a value:
+
+\begin{minted}{javascript}
+    let letters = ["a", "b", "c", "d"];
+
+    console.log(letters.indexOf("b")); // 1
+    console.log(letters.indexOf("d")); // 3
+    console.log(letters.indexOf("e")); // -1
+\end{minted}
+
+We get back the index of the first match. If not match is found you get back \texttt{-1}.\footnote{It doesn't return \texttt{false} because it's a good idea for functions to always return the same type of value}
+
+\subsection{Getting Part of an Array}
+
+Getting part of an array:
+
+\begin{minted}{javascript}
+    let numbers = [3, 4, 5, 6, 7, 8, 9];
+
+    // first argument is index to start on
+    // second argument is index to finish before
+    let middle = numbers.slice(2, 5); // [5, 6, 7]
+\end{minted}
+
+\pagebreak
+
+\section{The Spread Operator}
+
+We can use the \textbf{spread operator} (\texttt{...}) to copy an array:
+
+\begin{minted}{javascript}
+    let numbers = [3, 4, 5, 6, 7, 8, 9];
+
+    // ...numbers represents all the values in the array
+    // but as separate values
+    let copied = [...numbers]; // [3, 4, 5, 6, 7, 8, 9]
+
+    // without the spread operator we'd get an array inside an array
+    let oops = [numbers]; // [[3, 4, 5, 6, 7, 8, 9]]
+\end{minted}
+
+The \texttt{...numbers} bit effectively stands in for each item in the array as a separate element. So we're creating a new array with the \texttt{[} and \texttt{]} and then putting all of the elements from \texttt{numbers} into it.
+\\
+
+
+We can also use it to merge two arrays into a new array:
+
+\begin{minted}{javascript}
+    let odd = [3, 5, 7, 9];
+    let even = [4, 6, 8];
+
+    let mergedOddEven = [...odd, ...even]; // [3, 5, 7, 9, 4, 6, 8]
+    let mergedEvenOdd = [...even, ...odd]; // [4, 6, 8, 3, 5, 7, 9]
+\end{minted}
+
+This is useful because a lot of operations on arrays (like \texttt{pop} and \texttt{push}) alter the original array, which can lead to confusing results:
+
+\begin{minted}{javascript}
+    // a badly written function to get the last item in an array
+    let last = arr => arr.pop();
+
+    let values = [1, 2, 3]
+    last(values); // 3 - but values is now [1, 2]
+\end{minted}
+
+\pagebreak
+
+If we make a copy first, we don't need to worry about this:
+
+\begin{minted}{javascript}
+    let last = arr => [...arr].pop();
+
+    let values = [1, 2, 3]
+    last(values); // 3 - values still [1, 2, 3]
+\end{minted}
+
+You can also use this to add items to the end of a copy of an array:
+
+\begin{minted}{javascript}
+    let odd = [3, 5, 7, 9];
+
+    // add a few items on the end
+    let odder = [...odd, 11, 13]; // [3, 5, 7, 9, 11, 13]
+\end{minted}
+
+\section{Additional Resources}
+
+\begin{itemize}[leftmargin=*]
+    \item \href{https://eloquentjavascript.net/04_data.html}{Eloquent JavaScript: Objects and Arrays}
+    \item \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array}{MDN: Arrays}
+    \item \href{https://thomlom.dev/what-you-should-know-about-js-arrays/}{What You Should Know About JavaScript Arrays}
+\end{itemize}
