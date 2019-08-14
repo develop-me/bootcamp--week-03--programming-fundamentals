@@ -4,7 +4,7 @@ let pigLatinseWord = word => {
     let tail = word.substring(1);
 
     return tail + head + "ay";
-}
+};
 
 let pigLatin = str => {
     // splits the words by space

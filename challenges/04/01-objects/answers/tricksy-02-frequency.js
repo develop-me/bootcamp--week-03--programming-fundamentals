@@ -21,7 +21,7 @@ let frequency = string => {
         // increment the counter for the current letter
         record[letter] += 1;
         return record;
-    }, {})
+    }, {});
 };
 
 console.log(frequency("The quick brown fox jumps over the lazy dog"));
@@ -33,7 +33,7 @@ console.log(frequency("The quick brown fox jumps over the lazy dog"));
     }
 */
 
-console.log(frequency("Wkh sdvvzrug lv vhyhq grqw whoo dqbrqh"))
+console.log(frequency("Wkh sdvvzrug lv vhyhq grqw whoo dqbrqh"));
 
 /*
     {

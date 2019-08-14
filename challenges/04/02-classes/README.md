@@ -157,13 +157,13 @@ For the following challenges, **look at how the class is being used to work out 
         // name as the key
         // ages as the value
         let folks = {
-            "Alice": 29,
-            "Bob": 45,
-            "Carol": 67,
-            "Dan": 32,
+            Aretha: 29,
+            Bob: 45,
+            Chetna: 67,
+            Diego: 32,
         };
 
-        console.log(oldest(folks)); // "Carol"
+        console.log(oldest(folks)); // "Chetna"
     })()
     ```
 
@@ -213,7 +213,7 @@ For the following challenges, **look at how the class is being used to work out 
     */
 
     // we can list dietary information
-    console.log(cake.dietary()); "gluten, animal produce, dairy"
+    console.log(cake.dietary()); // "gluten, animal produce, dairy"
 
 
     // is the recipe vegan? (i.e. contains animal produce)

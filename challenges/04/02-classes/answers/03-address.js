@@ -18,7 +18,7 @@ class Address {
 
         return props.join(", ");
     }
-};
+}
 
 
 let address = new Address(

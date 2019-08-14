@@ -109,4 +109,4 @@ console.log(cake.display());
 */
 
 // we can list dietary information
-console.log(cake.dietary()); "gluten, animal produce, dairy"
+console.log(cake.dietary()); // "gluten, animal produce, dairy"

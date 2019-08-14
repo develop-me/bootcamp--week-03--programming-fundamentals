@@ -5,7 +5,7 @@ let sumToN = n => {
     // from 1 until n
     for (let i = 1; i <= n; i++) {
         // add the number to total
-        total = total + i;
+        total += i;
     }
 
     return total;

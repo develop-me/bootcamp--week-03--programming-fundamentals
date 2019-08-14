@@ -1,9 +1,9 @@
 let x = 1;
 
 let wtf = () => {
-  let x = 2;
-  let y = 5;
-  return x;
+    let x = 2;
+    let y = 5;
+    return x;
 };
 
 console.log(x); // ?

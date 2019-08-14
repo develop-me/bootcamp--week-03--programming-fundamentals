@@ -20,7 +20,7 @@ let address = {
 
         // join together the array of properties with a comma
         return props.join(", ");
-    }
+    },
 };
 
 console.log(address.postcode); // BS4 8TR

@@ -1,8 +1,8 @@
 let x = 1;
 
 let wtf = () => {
-  x += 2;
-  return x;
+    x += 2;
+    return x;
 };
 
 console.log(x); // ?

@@ -18,11 +18,11 @@ let oldest = map => {
     // name as the key
     // ages as the value
     let folks = {
-        "Alice": 29,
-        "Bob": 45,
-        "Carol": 67,
-        "Dan": 32,
+        Aretha: 29,
+        Bob: 45,
+        Chetna: 67,
+        Diego: 32,
     };
 
-    console.log(oldest(folks)); // "Carol"
-})()
+    console.log(oldest(folks)); // "Chetna"
+})();

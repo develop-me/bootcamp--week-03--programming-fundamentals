@@ -2,7 +2,7 @@
 
 let sum = values => {
     // keep track of sum
-    let sum = 0
+    let sum = 0;
 
     // standard array loop
     for (let i = 0; i < values.length; i += 1) {
@@ -14,7 +14,7 @@ let sum = values => {
     }
 
     return sum;
-}
+};
 
 let sumBoth = (first, second) => sum(first) + sum(second);
 

@@ -1,7 +1,7 @@
 // Create a function, `average`, that takes an array of numbers as an argument. Return the average value of all the numbers.
 
 let average = values => {
-    let sum = 0
+    let sum = 0;
 
     // standard array loop
     for (let i = 0; i < values.length; i += 1) {
