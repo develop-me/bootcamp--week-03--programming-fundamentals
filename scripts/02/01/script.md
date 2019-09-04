@@ -2,7 +2,7 @@
 
 ## Functions
 
-- In **Sublime**
+- In **VS Code**
 - A function is a block of code that does a specific thing
 - We can use it as many times as we like
 - Show anonymous addition function first

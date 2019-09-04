@@ -76,7 +76,7 @@
 
 ## Variables
 
-- Demonstrate in **Sublime**
+- Demonstrate in **VS Code**
 - Way of storing a **value** to use it later
 - Can give it a name to make code more readable
 - Need to **declare** a variable with `let`
@@ -104,7 +104,7 @@
         - start with a number
         - be a reserved word
     - use camel-case (as opposed to snake-case): convention
-    - Exercies: (In Sublime)
+    - Exercies: (In VS Code)
         - `age`
         - `my-name`
         - `1stPerson`
@@ -113,7 +113,7 @@
         - `favourite food`
         - `helloTo`
         - `$`
-- Template strings: include variables/code in a string *interpolation* (In Sublime)
+- Template strings: include variables/code in a string *interpolation* (In VS Code)
     - Tidier than concatenation
 
 

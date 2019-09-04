@@ -1,21 +1,25 @@
+% setup the document
 \documentclass[b5paper,openany]{book}
 
-\newcommand\maincolor{blue}
-\newcommand\notesurl{https://github.com/develop-me/book-marks/blob/develop/week-03--programming-fundamentals/notes/}
+% setup variables ------------------------------
 
-\input{../../template.tex}
+% your name
+\newcommand\instructor{Mark Wales}
 
-% pdf metadata
-\hypersetup{
-    pdfinfo={
-        Title={Week 3},
-        Subject={Programming Fundamentals with JavaScript}
-    }
-}
+% the week number
+\newcommand\weekno{3}
 
-\begin{document}
+% week main title
+\newcommand\maintitle{Programming Fundamentals}
 
-\tp{Sample}{Programming Fundamentals}{with JavaScript}
+% week subtitle
+\newcommand\subtitle{with JavaScript}
+
+% link to notes - relative to github.com/develop-me/
+\newcommand\github{week-03--programming-fundamentals/blob/master/notes/}
+
+% setup functions, styling, etc.
+\input{../../templates/template.tex}
 
 \input{sample.tex}
 
