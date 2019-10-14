@@ -1,4 +1,4 @@
-# Arrays
+# Array
 
 ## Challenges
 
@@ -31,20 +31,20 @@ You might be able to reuse functions you wrote yesterday for some of these chall
     );
     ```
 
-1) Create a function, `odd`, that takes an array of numbers. Return an array containing only the odd numbers.
+1) Create a function, `odds`, that takes an array of numbers. Return an array containing only the odd numbers.
 
     ```javascript
-    let odd = values => {
+    let odds = values => {
         // your code here
     };
 
     console.log(
-        odd([1, 2, 3]), // [1, 3]
-        odd([1, 2, 3, 4, 5, 6]), // [1, 3, 5]
+        odds([1, 2, 3]), // [1, 3]
+        odds([1, 2, 3, 4, 5, 6]), // [1, 3, 5]
     );
     ```
 
-1) Create a function, `max`, that takes an array of numbers. Return the largest number.
+1) Create a function, `largest`, that takes an array of numbers. Return the largest number.
 
     **Hint**: don't try and use `.sort()` (it won't do what you think) or `Math.max()` (that's cheating)
 
@@ -52,9 +52,9 @@ You might be able to reuse functions you wrote yesterday for some of these chall
     // ... your function here
 
     console.log(
-        max([2, 4, 6, 4, 7, 5]), // 7
-        max([-2, 4, 6, 4, 2, -7, 5]), // 6
-        max([-2, -4, -4, -7, -5]), // -2
+        largest([2, 4, 6, 4, 7, 5]), // 7
+        largest([-2, 4, 6, 4, 2, -7, 5]), // 6
+        largest([-2, -4, -4, -7, -5]), // -2
     );
     ```
 
@@ -106,18 +106,18 @@ You might be able to reuse functions you wrote yesterday for some of these chall
     );
     ```
 
-1) Create a function, `divisibleBy3`, that takes an array of numbers. Return an array containing only the numbers that are divisible by 3.
+1) Create a function, `divisibleBy3s`, that takes an array of numbers. Return an array containing only the numbers that are divisible by 3.
 
     ```javascript
     // ... your function here
 
     console.log(
-        divisibleBy3([1, 2, 3, 4, 5, 6]), // [3, 6]
-        divisibleBy3([3, 4, 5, 9]), // [3, 9]
+        divisibleBy3s([1, 2, 3, 4, 5, 6]), // [3, 6]
+        divisibleBy3s([3, 4, 5, 9]), // [3, 9]
     );
     ```
 
-1) Create a function, `min`, that takes an array of numbers. Return the smallest number.
+1) Create a function, `lowest`, that takes an array of numbers. Return the lowest number.
 
     **Hint**: don't try and use `.sort()` - it won't do what you think
 
@@ -125,9 +125,9 @@ You might be able to reuse functions you wrote yesterday for some of these chall
     // ... your function here
 
     console.log(
-        min([2, 4, 6, 4, 7, 5]), // 2
-        min([-2, 4, 6, -7, 5]), // -7
-        min([-2, -4, -11, -8, -4, -7, -5]), // -11
+        lowest([2, 4, 6, 4, 7, 5]), // 2
+        lowest([-2, 4, 6, -7, 5]), // -7
+        lowest([-2, -4, -11, -8, -4, -7, -5]), // -11
     );
     ```
 

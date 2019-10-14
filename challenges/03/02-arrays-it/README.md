@@ -19,20 +19,20 @@ You might be able to reuse functions you've written already for some of these ch
     );
     ```
 
-1) Create a function, `odd`, that takes an array of numbers. Using `.filter()` return an array containing only the odd numbers.
+1) Create a function, `odds`, that takes an array of numbers. Using `.filter()` return an array containing only the odd numbers.
 
     ```javascript
-    let odd = values => {
+    let odds = values => {
         // your code here
     };
 
     console.log(
-        odd([1, 2, 3]), // [1, 3]
-        odd([1, 2, 3, 4, 5, 6]), // [1, 3, 5]
+        odds([1, 2, 3]), // [1, 3]
+        odds([1, 2, 3, 4, 5, 6]), // [1, 3, 5]
     );
     ```
 
-1) Create a function, `max`, that takes an array of numbers. Using `.reduce()` return the largest number.
+1) Create a function, `largest`, that takes an array of numbers. Using `.reduce()` return the largest number.
 
     **Hint**: don't try and use `.sort()` (it won't do what you think) or `Math.max()` (that's cheating)
 
@@ -40,9 +40,9 @@ You might be able to reuse functions you've written already for some of these ch
     // ... your function here
 
     console.log(
-        max([2, 4, 6, 4, 7, 5]), // 7
-        max([-2, 4, 6, 4, -7, 5]), // 6
-        max([-2, -4, -6, -4, -7, -5]), // -2
+        largest([2, 4, 6, 4, 7, 5]), // 7
+        largest([-2, 4, 6, 4, -7, 5]), // 6
+        largest([-2, -4, -6, -4, -7, -5]), // -2
     );
     ```
 
@@ -94,18 +94,18 @@ You might be able to reuse functions you've written already for some of these ch
     );
     ```
 
-1) Create a function, `divisibleBy3`, that takes an array of numbers. Using `.filter()` return an array containing only the numbers that are divisible by 3.
+1) Create a function, `divisibleBy3s`, that takes an array of numbers. Using `.filter()` return an array containing only the numbers that are divisible by 3.
 
     ```javascript
     // ... your function here
 
     console.log(
-        divisibleBy3([1, 2, 3, 4, 5, 6]), // [3, 6]
-        divisibleBy3([3, 4, 5, 9]), // [3, 9]
+        divisibleBy3s([1, 2, 3, 4, 5, 6]), // [3, 6]
+        divisibleBy3s([3, 4, 5, 9]), // [3, 9]
     );
     ```
 
-1) Create a function, `min`, that takes an array of numbers. Using `.reduce()` return the smallest number.
+1) Create a function, `lowest`, that takes an array of numbers. Using `.reduce()` return the smallest number.
 
     **Hint**: don't try and use `.sort()` - it won't do what you think
 
@@ -113,9 +113,9 @@ You might be able to reuse functions you've written already for some of these ch
     // ... your function here
 
     console.log(
-        min([2, 4, 6, 4, 7, 5]), // 2
-        min([-2, 4, 6, 4, -7, 5]), // -7
-        min([-2, -4, -11, -4, -7, -5]), // -11
+        lowest([2, 4, 6, 4, 7, 5]), // 2
+        lowest([-2, 4, 6, 4, -7, 5]), // -7
+        lowest([-2, -4, -11, -4, -7, -5]), // -11
     );
     ```
 
@@ -157,7 +157,7 @@ You might be able to reuse functions you've written already for some of these ch
 
 1) Create a function, `reverse`, that takes an array of strings. Return a new array where each string is reversed.
 
-    **Hint**: arrays have a `reverse()` method and you can turn a string into an array of letters using `str.split("")` and turn it back into a string using `arr.join("")`
+    **Hint**: arrays have a `reverse()` method and you can turn a string into an array of letters using `Array.from(str)` and turn it back into a string using `arr.join("")`
 
     ```javascript
     // ... your function here
@@ -194,7 +194,7 @@ You might be able to reuse functions you've written already for some of these ch
 
 1) Create a function, `palindrome`, that take a string as an argument. Return `true` if the given string is a palindrome (i.e. the same forwards as backwards).
 
-    **Hint**: you turn a string into an array using `str.split("")` and back again using `arr.join("")`
+    **Hint**: you turn a string into an array using `Array.from(str)` and back again using `arr.join("")`
 
     ```javascript
     // ... your function here

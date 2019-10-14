@@ -1,6 +1,6 @@
 // Create a function, `max`, that takes an array of numbers. Return the largest number.
 
-let max = values => {
+let largest = values => {
     // keep track of the biggest number
     // start at first value in the array
     let biggest = values[0];
@@ -25,7 +25,7 @@ let max = values => {
 };
 
 console.log(
-    max([2, 4, 6, 4, 7, 5]), // 7
-    max([-2, 4, 6, 4, 2, -7, 5]), // 6
-    max([-2, -4, -4, -7, -5]), // -2
+    largest([2, 4, 6, 4, 7, 5]), // 7
+    largest([-2, 4, 6, 4, 2, -7, 5]), // 6
+    largest([-2, -4, -4, -7, -5]), // -2
 );

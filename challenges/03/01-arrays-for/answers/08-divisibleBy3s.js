@@ -1,6 +1,6 @@
 // Create a function, `divisibleBy3`, that takes an array of numbers. Return an array containing only the numbers that are divisible by 3.
 
-let divisibleBy3 = values => {
+let divisibleBy3s = values => {
     // empty arrray to store results in
     let results = [];
 
@@ -21,6 +21,6 @@ let divisibleBy3 = values => {
 };
 
 console.log(
-    divisibleBy3([1, 2, 3, 4, 5, 6]), // [3, 6]
-    divisibleBy3([3, 4, 5, 9]), // [3, 9]
+    divisibleBy3s([1, 2, 3, 4, 5, 6]), // [3, 6]
+    divisibleBy3s([3, 4, 5, 9]), // [3, 9]
 );

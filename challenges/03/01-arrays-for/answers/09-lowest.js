@@ -1,6 +1,6 @@
 // Create a function, `min`, that takes an array of numbers. Return the smallest number.
 
-let min = values => {
+let lowest = values => {
     // keep track of the smallest number
     // start at first value in the array
     let smallest = values[0];
@@ -25,7 +25,7 @@ let min = values => {
 };
 
 console.log(
-    min([2, 4, 6, 4, 7, 5]), // 2
-    min([-2, 4, 6, -7, 5]), // -7
-    min([-2, -4, -11, -8, -4, -7, -5]), // -11
+    lowest([2, 4, 6, 4, 7, 5]), // 2
+    lowest([-2, 4, 6, -7, 5]), // -7
+    lowest([-2, -4, -11, -8, -4, -7, -5]), // -11
 );

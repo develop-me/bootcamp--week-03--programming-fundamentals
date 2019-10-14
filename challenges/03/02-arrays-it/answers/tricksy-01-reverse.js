@@ -3,7 +3,7 @@
 // accept a word
 let reverseWord = word => {
     // split it into an array of letters
-    let letters = word.split("");
+    let letters = Array.from(word);
     // reverse the array of letters
     let reversed = letters.reverse();
     // join the array of letters together into a string
