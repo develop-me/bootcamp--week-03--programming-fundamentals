@@ -10,8 +10,6 @@
     console.log(folks);
     ```
 
-- Now use a loop to `console.log()`` each name in the `folks` array
-
 ---
 
 Copy the provided code and then add your own code in the `// ... your function here` bit. **Make sure you write a function for each challenge**.
