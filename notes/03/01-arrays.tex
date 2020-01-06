@@ -243,6 +243,22 @@ values.sort();
 console.log(values); // [11, 112, 380, 40, 89, 9]
 \end{minted}
 
+Be careful \textbf{this changes the original array}.
+
+
+\subsection{Reversing an Array}
+
+It can be useful to reverse the order of an array:
+
+\begin{minted}{javascript}
+    let letters = ["a", "b", "c", "d"];
+
+    letters.reverse();
+    console.log(letters); // ["d", "c", "b", "a"]
+\end{minted}
+
+Be careful \textbf{this changes the original array}.
+
 
 \subsection{Merging Arrays}
 
@@ -283,6 +299,21 @@ Finding a value:
 
 We get back the index of the first match. If not match is found you get back \texttt{-1}.\footnote{It doesn't return \texttt{false} because it's a good idea for functions to always return the same type of value}
 
+\subsection{Checking if a Value Exists}
+
+Checking if a value exists in the array:
+
+\begin{minted}{javascript}
+    let letters = ["a", "b", "c", "d"];
+
+    console.log(letters.includes("b")); // true
+    console.log(letters.includes("d")); // true
+    console.log(letters.includes("e")); // false
+\end{minted}
+
+If you're only interested in whether a value is in an array - and not \textit{where} it is - then you can use \texttt{.includes()} instead. This will always return a boolean.
+
+
 \subsection{Getting Part of an Array}
 
 Getting part of an array:
@@ -294,6 +325,24 @@ Getting part of an array:
     // second argument is index to finish before
     let middle = numbers.slice(2, 5); // [5, 6, 7]
 \end{minted}
+
+\subsection{Removing Part of an Array}
+
+Removing part of an array:
+
+\begin{minted}{javascript}
+    let numbers = [3, 4, 5, 6, 7, 8, 9];
+
+    // first argument is index to start on
+    // second argument is index to finish before
+    let middle = numbers.splice(2, 3);
+    console.log(middle); // [5, 6, 7]
+
+    // changes the original array
+    console.log(numbers); // [3, 4, 8, 9]
+\end{minted}
+
+Be careful \textbf{this changes the original array}.
 
 \pagebreak
 
@@ -362,4 +411,5 @@ You can also use this to add items to the end of a copy of an array:
     \item \href{https://eloquentjavascript.net/04_data.html}{Eloquent JavaScript: Objects and Arrays}
     \item \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array}{MDN: Arrays}
     \item \href{https://thomlom.dev/what-you-should-know-about-js-arrays/}{What You Should Know About JavaScript Arrays}
+    \item \href{https://buginit.com/javascript/javascript-destructuring-es6-the-complete-guide/}{JavaScript Destructuring ES6: The Complete Guide}
 \end{itemize}

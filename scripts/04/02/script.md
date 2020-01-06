@@ -6,6 +6,7 @@
     - variable declarations
     - function parameters
     - assign new name with destructuring
+    - `map`, `filter`, and `reduce` with objects with destructuring
 - Spread operator
     - Copy objects
     - Change whilst copying
@@ -14,9 +15,6 @@
 - `Object.keys(obj)` and `Object.values(obj)`
     - Useful when using objects as an array - for quick access
     - Sometimes called a "Map"
-- `map`, `filter`, and `reduce` with objects
-    - without destructuring
-    - with destructuring
 
 
 ## Classes

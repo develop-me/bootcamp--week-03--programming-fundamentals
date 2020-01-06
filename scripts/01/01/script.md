@@ -3,9 +3,9 @@
 ## Intro
 
 - Introduce yourself
-- Ice breaker
 - What is programming?
-- Anyone done any before?
+- Ice breaker
+    - Anyone done any before?
 - Programming is a skill that takes a lot of practice to get good at, but everyone can do it
 - A lot of material to cover in one day
 
@@ -71,7 +71,11 @@
         - Number `+` String of Word
         - Number `*` String
     - Using `+` to **cast** to number: coming from DOM
-    - Exercises
+    - Exercises:
+        - '10' + 5
+        - '10' + '5'
+        - 10 + 5
+        - '10' - 5
 
 
 ## Variables

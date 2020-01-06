@@ -24,11 +24,14 @@
     - store in a single variable
     - when passed to a function it's a single argument
 - Useful operations
-    - `.sort()`: *alphabetic* sort
+    - `.sort()`: *alphabetic* sort (**destructive**)
+    - `.reverse()`:  reverses (**destructive**)
     - `.concat(otherArr)`: merging two arrays
     - `.join(seperator)`: array to string
     - `.indexOf(term)`: index of first matching item, or `-1`
+    - `.includes(term)`: does it exist in array, boolean
     - `.slice(start, finishBefore)`: part of an array
+    - `.splice(start, numberOfItems)`: removes part of an array and returns remove parts (**destructive**)
 - Spread operator:
     - copying an array
     - merging an array

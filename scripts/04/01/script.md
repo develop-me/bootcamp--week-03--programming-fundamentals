@@ -19,6 +19,7 @@
 - Methods **are** properties - so name can't be same as other properties
 - `this` keyword: access value in object (`mark.js`)
 - Methods often don't take arguments - data stored on the object
+- `map`, `filter`, and `reduce` with objects (without destructuring)
 
 
 ## Standard library:
@@ -32,7 +33,7 @@
     - `.toUpperCase()`
     - `.split(" ")` - with space
     - `.split(", ")`
-    - `.split("")` - with empty string
+    - `Array.from("wombat")` - to split on characters
 - Date
     - `new Date()` - now
     - `new Date("2018-08-24")` - specific date
