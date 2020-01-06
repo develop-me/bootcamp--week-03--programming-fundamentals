@@ -220,7 +220,7 @@ Copy the boilerplate provided for each problem into a new JS file. Fill in the `
     console.log("Expected: owhay ownay rownbay owcay, Actual: " + result);
     ```
 
-9. Write a function that takes two object literals and returns `true` if they have the same value for their `name` **or** `value` properties:
+9. Write a function that takes two object literals and returns `true` if they have the same value for their `name` **or** `age` properties:
 
     ```javascript
     let comparePeople = (a, b) => {
@@ -229,18 +229,18 @@ Copy the boilerplate provided for each problem into a new JS file. Fill in the `
 
     (() => {
         let first = {
-            name: "age",
-            value: 36,
+            name: "Jamal",
+            age: 36,
         };
 
         let second = {
-            name: "cars",
-            value: 56,
+            name: "Salma",
+            age: 56,
         };
 
         let third = {
-            name: "age",
-            value: 56,
+            name: "Jamal",
+            age: 56,
         };
 
         let result = comparePeople(first, second);

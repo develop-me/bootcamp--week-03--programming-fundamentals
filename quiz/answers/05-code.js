@@ -1,7 +1,7 @@
 // split the code into an array of characters
 // filter out all the characters that aren't divisible by 7 (when 0 index accounted for)
 // then join them back together
-let crack = code => code.split("").filter((char, i) => (i + 1) % 7 === 0).join("");
+let crack = code => Array.from(code).filter((char, i) => (i + 1) % 7 === 0).join("");
 
 // Answer by Ian from Cohort #11
 

@@ -1,22 +1,22 @@
 // accept two people arguments
 // check if their name properties match or
-// if their value properties match
-let comparePeople = (a, b) => a.name === b.name || a.value === b.value;
+// if their age properties match
+let comparePeople = (a, b) => a.name === b.name || a.age === b.age;
 
 (() => {
     let first = {
-        name: "age",
-        value: 36,
+        name: "Jamal",
+        age: 36,
     };
 
     let second = {
-        name: "cars",
-        value: 56,
+        name: "Salma",
+        age: 56,
     };
 
     let third = {
-        name: "age",
-        value: 56,
+        name: "Jamal",
+        age: 56,
     };
 
     let result = comparePeople(first, second);
