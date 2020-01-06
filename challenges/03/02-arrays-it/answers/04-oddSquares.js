@@ -6,14 +6,16 @@ let square = value => value * value;
 // existing odd function - is a value odd
 let odd = n => n % 2 !== 0;
 
-let oddSquares = values => {
-    // get all the squares
-    let squares = values.map(square);
+// existing squares function
+let squares = values => values.map(square);
 
-    // filter out the even ones
-    return squares.filter(odd);
-};
+// existing odds function
+let odds = values => values.filter(odd);
 
+// compose squares and odds
+let oddSquares = values => odds(squares(values));
+
+// Answer by Beth from Cohort #14
 console.log(
     oddSquares([2, 3, 4, 5, 6, 7]), // [9, 25, 49]
     oddSquares([2, 3, 4]), // [9]

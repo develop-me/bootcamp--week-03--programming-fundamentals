@@ -150,6 +150,7 @@ Create a new file for each challenge. Copy the provided code and then add your o
         max(1, 2), // 2
         max(3, -2), // 3
         max(-3, -5), // -3
+        max(3, 3), // 3
     );
     ```
 
@@ -162,6 +163,7 @@ Create a new file for each challenge. Copy the provided code and then add your o
         min(1, 2), // 1
         min(3, -2), // -2
         min(-3, -5), // -5
+        min(3, 3), // 3
     );
     ```
 
@@ -205,7 +207,6 @@ Create a new file for each challenge. Copy the provided code and then add your o
     // ... your function here
 
     console.log(
-        prime(1), // false
         prime(2), // true
         prime(3), // true
         prime(4), // false
@@ -217,5 +218,6 @@ Create a new file for each challenge. Copy the provided code and then add your o
         prime(5121), // false
         prime(17523), // false
         prime(15487319), // true
+        prime(1), // false - by definition, get it working for the rest first
     );
     ```

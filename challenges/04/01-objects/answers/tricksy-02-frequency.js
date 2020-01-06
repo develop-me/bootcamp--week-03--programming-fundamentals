@@ -4,7 +4,7 @@ let frequency = string => {
     // convert the string to lowercase
     // split it into characters
     // sort alphabetically - for better console output, not strictly necessary
-    let characters = string.toLowerCase().split("").sort();
+    let characters = Array.from(string.toLowerCase()).sort();
 
     // reduce into an object
     return characters.reduce((record, letter) => {

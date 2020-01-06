@@ -32,20 +32,6 @@ You might be able to reuse functions you've written already for some of these ch
     );
     ```
 
-1) Create a function, `largest`, that takes an array of numbers. Using `.reduce()` return the largest number.
-
-    **Hint**: don't try and use `.sort()` (it won't do what you think) or `Math.max()` (that's cheating)
-
-    ```javascript
-    // ... your function here
-
-    console.log(
-        largest([2, 4, 6, 4, 7, 5]), // 7
-        largest([-2, 4, 6, 4, -7, 5]), // 6
-        largest([-2, -4, -6, -4, -7, -5]), // -2
-    );
-    ```
-
 1) Create a function, `average`, that takes an array of numbers as an argument. Using `.reduce()` return the average value of all the numbers.
 
     ```javascript
@@ -70,7 +56,7 @@ You might be able to reuse functions you've written already for some of these ch
     );
     ```
 
-1) Create a function, `double`, that takes an array of numbers as an argument. Using `.map()` Return a new array containing each number doubled.
+1) Create a function, `double`, that takes an array of numbers as an argument. Using `.map()` return a new array containing each number doubled.
 
     ```javascript
     // ... your function here
@@ -102,6 +88,20 @@ You might be able to reuse functions you've written already for some of these ch
     console.log(
         divisibleBy3s([1, 2, 3, 4, 5, 6]), // [3, 6]
         divisibleBy3s([3, 4, 5, 9]), // [3, 9]
+    );
+    ```
+
+1) Create a function, `largest`, that takes an array of numbers. Using `.reduce()` return the largest number.
+
+    **Hint**: don't try and use `.sort()` (it won't do what you think) or `Math.max()` (that's cheating)
+
+    ```javascript
+    // ... your function here
+
+    console.log(
+        largest([2, 4, 6, 4, 7, 5]), // 7
+        largest([-2, 4, 6, 4, -7, 5]), // 6
+        largest([-2, -4, -6, -4, -7, -5]), // -2
     );
     ```
 
