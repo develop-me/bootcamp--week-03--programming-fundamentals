@@ -7,7 +7,7 @@
 \newcommand\instructor{Mark Wales}
 
 % the week number
-\newcommand\weekno{3}
+\newcommand\weekno{Sample}
 
 % week main title
 \newcommand\maintitle{Programming Fundamentals}
@@ -16,18 +16,23 @@
 \newcommand\subtitle{with JavaScript}
 
 % link to notes - relative to github.com/develop-me/
-\newcommand\github{week-03--programming-fundamentals/blob/master/notes/}
+\newcommand\github{bootcamp--week-03--programming-fundamentals/blob/master/notes/}
 
 % setup functions, styling, etc.
-\input{../../templates/template.tex}
+\input{../../latex-templates/template.tex}
+
+
+% the structure of the document
+\begin{document}
+
+% render the title page (uses variables above)
+\tp
 
 \input{sample.tex}
 
-\quotepage{The greatest teacher failure is.}{Yoda}
-
 \tableofcontents
 
-\input{../../preface.tex}
+\input{../../latex-templates/preface.tex}
 
 \chapter{The Fundamentals of Programming}
 \input{01/00-fundamentals.tex}
@@ -53,6 +58,6 @@
 \nchapter{Additional Resources}
 \input{links.tex}
 
-\input{../../colophon.tex}
+\input{../../latex-templates/colophon.tex}
 
 \end{document}
