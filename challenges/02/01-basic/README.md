@@ -194,10 +194,12 @@ Create a new file for each challenge. Copy the provided code and then add your o
 1) Create a function, `skip`, that takes two numbers, `skip` and `max`. The function should return the total of the numbers from 1 to `max` excluding any numbers divisible by `skip`.
 
     ```javascript
-    // ... your function here
+    let skip = (skip, max) => {
+        // ... your code here
+    }
 
     console.log(
-        skip(4, 20), // 150
+        skip(4, 20), // 1 + 2 + 3 + 5 + 6 + 7 + 9 + 10 + 11 + 13 + 14 + 15 + 17 + 18 + 19 = 150
     );
     ```
 
