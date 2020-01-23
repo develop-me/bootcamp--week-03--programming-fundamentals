@@ -52,7 +52,7 @@ Create a new file for each challenge. Copy the provided code and then add your o
     );
     ```
 
-1) Create a recursive function that given a number, `n`, will output the `n`th Fibonacci number.
+1) Create a recursive function that given a number, `n`, will output the `n`th Fibonacci number. **You'll need to read the notes on recursive functions**.
 
     ```javascript
     // ... your function here

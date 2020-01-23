@@ -14,7 +14,13 @@ Create a new file for each challenge.
 
 ---
 
-Copy the provided code and then add your own code in the `// ... your function here` bit. Don't worry about the weird `(() => { ... })()` notation - you'll learn about it next week. **Make sure you write a function for each challenge**.
+Copy the provided code and then add your own code in the `// ... your function here` bit.
+
+Look at how the function is being called in the test cases provided before you start the challenge.
+
+Don't worry about the weird `(() => { ... })()` notation - you'll learn about it next week.
+
+**Make sure you write a function for each challenge**.
 
 1) Update `sameName` to return `true` if the objects have the same `name` property and `false` if they have different names.
 
@@ -61,7 +67,7 @@ Copy the provided code and then add your own code in the `// ... your function h
     **Hint**: numbers have a `.toFixed(n)` method which rounds the number to the given number of decimal places and returns a string
 
     ```javascript
-    let total = items => {
+    let total = (items) => {
         // your code here
     };
 

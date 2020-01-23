@@ -6,6 +6,8 @@
 
 Create a new file for each challenge. Copy the provided code and then add your own code in the `// ... your function here` bit.
 
+**You should use fat arrow syntax for all of your functions.** You *don't* need to write them all as single-line functions (unless you want to).
+
 1) Create a function, `concat`, that takes two strings as arguments. The function should return the two strings joined together with a space in between.
 
     ```javascript

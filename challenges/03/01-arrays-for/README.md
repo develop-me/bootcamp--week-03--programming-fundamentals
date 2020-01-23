@@ -19,7 +19,7 @@ You might be able to reuse functions you wrote yesterday for some of these chall
 1) Create a function, `squares`, that takes an array of numbers as an argument. Return a new array containing the square of each number.
 
     ```javascript
-    let squares = values => {
+    let squares = (values) => {
         // your code here
     };
 
@@ -32,7 +32,7 @@ You might be able to reuse functions you wrote yesterday for some of these chall
 1) Create a function, `odds`, that takes an array of numbers. Return an array containing only the odd numbers.
 
     ```javascript
-    let odds = values => {
+    let odds = (values) => {
         // your code here
     };
 
