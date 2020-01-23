@@ -3,10 +3,12 @@
 ## Intro
 
 - Introduce yourself
+- Any admin stuff (e.g. finishing early for childcare)
 - What is programming?
+    - Giving computers instructions
+    - Programming is a skill that takes a lot of practice to get good at, but everyone can do it
 - Ice breaker
     - Anyone done any before?
-- Programming is a skill that takes a lot of practice to get good at, but everyone can do it
 - A lot of material to cover in one day
 
 
@@ -66,7 +68,7 @@
 - Numbers & Strings
     - Examples
         - Number `+` Number
-        - Number `+ `String of Number
+        - Number `+` String of Number
         - String of Number `+` Number
         - Number `+` String of Word
         - Number `*` String
@@ -86,9 +88,9 @@
 - Need to **declare** a variable with `let`
 - Then **assign** a value
     - If don't assign a value then `undefined`
-- Can reassign a value later
 - Can then use the values
 - Generally **declare and assign at same time**
+- Can reassign a value later
 - Variable types:
     - `let
     - `const`
@@ -108,7 +110,7 @@
         - start with a number
         - be a reserved word
     - use camel-case (as opposed to snake-case): convention
-    - Exercies: (In VS Code)
+    - Exercies:
         - `age`
         - `my-name`
         - `1stPerson`
@@ -117,6 +119,9 @@
         - `favourite food`
         - `helloTo`
         - `$`
+- **Shorthand assignment operators**:
+    - `+=`
+    - `*=`
 - Template strings: include variables/code in a string *interpolation* (In VS Code)
     - Tidier than concatenation
 
@@ -125,5 +130,8 @@
 
 - `// blah`
 - `/* blah */`
-- Comments shouldn't explain what code *does*, hopefully that should be obvious
-- Comments are for explaining unusual things - more *why* than *what*
+- Comments should **not** explain what code *does*, hopefully that should be obvious
+- Comments are for **explaining unusual things** - more *why* than *what*
+
+
+## **Student Exercises**

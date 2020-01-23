@@ -26,4 +26,5 @@
     4. Write out the boilerplate
     5. The thinky bit: Work about how to turn the arguments into the return value
     6. Test it with a few values you know the answer to
-- Example: `let celsius = fahrenheit => (fahrenheit - 32) / 1.8;` - make sure to test it
+    7. Optional: Refactor
+- Example **Fahrenheit to Celsius**: `let celsius = fahrenheit => (fahrenheit - 32) / 1.8;` - make sure to test it

@@ -12,6 +12,10 @@
 - Variables created without declaring them will go into **global** scope
 - Examples
 
+---
+
+**Optional: don't cover if they're struggling**
+
 ### Function Composition
 
 - Don't touch functions once you've written them
