@@ -239,6 +239,7 @@ Here's the process to go through when you're writing a function:
     \item Write out the boilerplate
     \item The thinky bit: Work about how to turn the arguments into the return value
     \item Test it with a few values you know the answer to
+    \item Refactor (Optional): see if you can tidy up the code
 \end{enumerate}
 
 
@@ -264,6 +265,10 @@ For example, a function to convert Fahrenheit to Celsius:
         \begin{minted}{javascript}
             celsius(45); // 7.222222
             celsius(32); // 0
+        \end{minted}
+    \item Refactor:
+        \begin{minted}{javascript}
+            let celsius = fahrenheit => (fahrenheit - 32) / 1.8;
         \end{minted}
 \end{enumerate}
 

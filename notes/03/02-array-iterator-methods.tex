@@ -48,6 +48,32 @@ So far you've always called the function yourself, but the iterator methods \tex
 This is tidier than using a \texttt{for} loop and is the preferred method. Although, more often than not, \texttt{filter}, \texttt{map}, and \texttt{reduce} can be used to create more succinct code.
 
 
+\begin{infobox}{What the func?}
+    Let's write our own version of \texttt{forEach} to see what's actually going on:
+
+    \begin{minted}{js}
+        // pass in an array and a function
+        let forEach = (arr, func) => {
+            // standard for loop to go over every item in the array
+            for (let i = 0; i < arr.length; i += 1) {
+                // get current item in the array
+                let current = arr[i];
+
+                // call the function, passing in the current value
+                // as the first argument and the index as the second
+                func(current, i);
+            }
+        };
+
+        // we can use it like this (dot notation is an object thing)
+        forEach([1, 2, 3, 4], (val, index) => {
+            console.log(val, index);
+        });
+    \end{minted}
+
+    We can't write it with \texttt{.} notation yet (that's an object thing), but other than having to pass the array in as the first argument, this works identically to how \texttt{.forEach} works.
+\end{infobox}
+
 
 \section{\texttt{find}}
 
