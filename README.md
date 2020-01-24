@@ -2,8 +2,7 @@
 
 - Day 1: Programming Fundamentals
     - [Basic Types, Variables, Comments](https://github.com/develop-me/bootcamp--week-03--programming-fundamentals/blob/master/scripts/01/01/script.md)
-    - [Basic Logic](https://github.com/develop-me/bootcamp--week-03--programming-fundamentals/blob/master/scripts/01/02/script.md)
-    - [Conditionals & Loops](https://github.com/develop-me/bootcamp--week-03--programming-fundamentals/blob/master/scripts/01/03/script.md)
+    - [Basic Logic, Conditionals & Loops](https://github.com/develop-me/bootcamp--week-03--programming-fundamentals/blob/master/scripts/01/02/script.md)
 - Day 2: Functions
     - [Functions](https://github.com/develop-me/bootcamp--week-03--programming-fundamentals/blob/master/scripts/02/01/script.md)
     - [Scope & Recursion](https://github.com/develop-me/bootcamp--week-03--programming-fundamentals/blob/master/scripts/02/02/script.md)
