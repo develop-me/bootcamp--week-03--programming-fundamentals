@@ -36,10 +36,10 @@ Work out the answers to the following without running the code. Once you've work
     ```javascript
     let x  = 12;
 
-    let add = function (x) {
-            x += 12;
-            return x;
-        };
+    let add = (x) => {
+        x += 12;
+        return x;
+    };
 
     add(x);
 
@@ -52,10 +52,10 @@ Work out the answers to the following without running the code. Once you've work
     ```javascript
     let x  = 12;
 
-    let add = function () {
-            x += 12;
-            return x;
-        };
+    let add = () => {
+        x += 12;
+        return x;
+    };
 
     add(x);
 
