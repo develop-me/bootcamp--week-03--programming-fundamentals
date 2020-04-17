@@ -36,10 +36,10 @@ Work out the answers to the following without running the code. Once you've work
     ```javascript
     let x  = 12;
 
-    let add = function (x) {
-            x += 12;
-            return x;
-        };
+    let add = (x) => {
+        x += 12;
+        return x;
+    };
 
     add(x);
 
@@ -52,10 +52,10 @@ Work out the answers to the following without running the code. Once you've work
     ```javascript
     let x  = 12;
 
-    let add = function () {
-            x += 12;
-            return x;
-        };
+    let add = () => {
+        x += 12;
+        return x;
+    };
 
     add(x);
 
@@ -89,7 +89,7 @@ Copy the boilerplate provided for each problem into a new JS file. Fill in the `
     console.log("Expected: false, Actual: " + result);
     ```
 
-2. Write a function, `multiply` that takes two **positive** numbers and multiplies them together... however, **you aren't allowed to use `*` or `/` or `Math`**:
+2. Write a function, `multiply` that takes two **positive integers** and multiplies them together... however, **you aren't allowed to use `*` or `/` or `Math`**:
 
 
     ```javascript
@@ -169,7 +169,7 @@ Copy the boilerplate provided for each problem into a new JS file. Fill in the `
     ```
 
 
-6. Write a function, `minmax`, that takes an array of numbers and returns the smallest value plus the largest value in the array:
+6. Write a function, `minmax`, that takes an array of numbers and returns the smallest value plus the largest value in the array. **Don't use `.sort()`**:
 
     ```javascript
     let minmax = values => {

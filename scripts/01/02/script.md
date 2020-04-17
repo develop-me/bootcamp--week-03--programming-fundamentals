@@ -13,6 +13,7 @@
     - `!==`
     - `==`: type coercion
     - Exercises:
+        - "Ben" === "ben"
         - "12" === 12
         - 1/2 === 0.5
 - Logic Rules

@@ -5,8 +5,11 @@
 - Introduce yourself
 - Any admin stuff (e.g. finishing early for childcare)
 - What is programming?
+    - As opposed to coding
+        - Not to devalue non-programming coding
     - Giving computers instructions
     - Programming is a skill that takes a lot of practice to get good at, but everyone can do it
+    - Send round link to [Things I Don't Know](https://overreacted.io/things-i-dont-know-as-of-2018/) - Dan Abramov, creator of Redux (hardest thing on the course), explains all the things he doesn't know
 - Ice breaker
     - Anyone done any before?
 - A lot of material to cover in one day
@@ -17,10 +20,10 @@
 - Node
     - REPL
     - Script mode
+    - `console.log()`
     - Errors
         - Error in file
         - Module not found
-    - `console.log()`
     - Command-line Fu
         - `ls`
         - `pwd`
@@ -54,6 +57,7 @@
         - Division
         - Multiplication
         - Modulus
+    - BIDMAS / Brackets
     - Exercises: `4 % 3`, `0.1 + 0.1`, `0.1 + 0.2`, `0.2 * 0.2`
 
 - Strings
@@ -70,8 +74,7 @@
         - Number `+` Number
         - Number `+` String of Number
         - String of Number `+` Number
-        - Number `+` String of Word
-        - Number `*` String
+        - Number `/` String
     - Using `+` to **cast** to number: coming from DOM
     - Exercises:
         - '10' + 5
@@ -82,7 +85,6 @@
 
 ## Variables
 
-- Demonstrate in **VS Code**
 - Way of storing a **value** to use it later
 - Can give it a name to make code more readable
 - Need to **declare** a variable with `let`
@@ -108,7 +110,7 @@
         - contain spaces
         - contain hyphens
         - start with a number
-        - be a reserved word
+        - be a reserved word (demonstrate syntax highlighting in VS Code)
     - use camel-case (as opposed to snake-case): convention
     - Exercies:
         - `age`

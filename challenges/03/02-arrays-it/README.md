@@ -140,19 +140,6 @@ You might be able to reuse functions you've written already for some of these ch
     );
     ```
 
-1) Create a function, `merge`, that takes two arrays as arguments. It should return a new array containing the elements of both arrays.
-
-    1. Try doing it using the spread operator
-    3. Trying doing it *without* using the spread operator or `.concat()`
-
-    ```javascript
-    // ... your function here
-
-    console.log(
-        merge([2, 3, 4, 5, 6, 7], [8, 9, 10, 11, 12]), // [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    );
-    ```
-
 ## Tricksy Challenges
 
 1) Create a function, `reverse`, that takes an array of strings. Return a new array where each string is reversed.

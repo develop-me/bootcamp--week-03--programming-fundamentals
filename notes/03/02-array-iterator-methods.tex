@@ -177,9 +177,8 @@ You should be careful relying on the default value: if the array happens to be e
 
 \section{Which Iterator Method?}
 
-Firstly, you can only use iterator methods on arrays, so if you're not working with an array, you can't use the iterator methods (although, if you're sneaky, you might be able to turn the problem into one involving arrays).
-
 \begin{itemize}
+    \item Do you have an array? If not, then you can't use an array iterator method!\footnote{Although you might be able to create an array somehow}
     \item Do you need to filter out some values? Use \texttt{filter}
     \item Do you need to transform each value? Use \texttt{map}
     \item Do you need to turn the array into some other value? Use \texttt{reduce}

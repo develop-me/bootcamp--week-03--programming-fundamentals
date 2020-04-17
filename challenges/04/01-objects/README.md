@@ -150,7 +150,8 @@ Don't worry about the weird `(() => { ... })()` notation - you'll learn about it
     // ... your function here
 
     console.log(
-        daysSince("1984-04-16"), // 12 thousand and something
+        daysSince("1984-04-16"), // 13 thousand and something
+        // why not try *your* date of birth?
     );
     ```
 

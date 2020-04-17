@@ -1,10 +1,11 @@
+let longer = (first, second) => {
+    // return the longer of the two strings
+    return first.length > second.length ? first : second;
+};
+
 let longest = words => {
-    // reduce over words
-    return words.reduce((longest, currentWord) => {
-        // if currentWord is longer return it
-        // otherwise keep longest word so far
-        return currentWord.length > longest.length ? currentWord : longest;
-    }, words[0]);
+    // reduce over words using longestWord
+    return words.reduce(longer, words[0]);
 };
 
 let result = longest(["cow", "wombat", "aardvark"]);
