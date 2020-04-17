@@ -33,15 +33,15 @@ For the following challenges, **look at how the class is being used to work out 
 
     let lightswitch = new Lightswitch();
 
+    // you can check whether it is on or not
+    console.log(lightswitch.isOn()); // false
+
     // you can turn it on
     lightswitch.turnOn();
-
-    // you can check whether it is on or not
     console.log(lightswitch.isOn()); // true
 
     // you can turn it off
     lightswitch.turnOff();
-
     console.log(lightswitch.isOn()); // false
     ```
 

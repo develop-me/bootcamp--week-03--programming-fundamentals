@@ -6,7 +6,7 @@
 - A function is a block of code that does a specific thing
 - We can use it as many times as we like
 - Show anonymous addition function first
-- Can assign a function a variable like any of value
+- Can assign a function to a variable like any other value
 - Functions don't run until you **call** them
 - When you call a function you can pass it **arguments**
 - Functions normally return values
@@ -14,11 +14,9 @@
     - one line
     - multi-line with `return`
     - not *identical* to normal function, but advanced topic
-- You can put as much as you like inside a function
+- Example: multiple three numbers
 - You should declare your functions before you use them, they won't run until **call** them (`order.js`)
-- Examples
-    - `greet.js`
-    - multiple three numbers
+- You can put as much as you like inside a function: `greet.js`
 - Writing functions:
     1. Think of a sensible name for the function: a short way of describing its purpose
     2. Think about how many arguments the function needs to accept: this will depend on what you're trying to do
