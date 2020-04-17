@@ -4,8 +4,17 @@
 - More basic object challenges
     > Few more non-array challenges
 - More basic array challenges
+- Just use fat arrow functions?
 - Notes about passing variables to functions
     > Make it clear that the name is not important
+- Diagrams of concepts
+    * [ ] Order of execution
+    * [ ] Functions: parameters/arguments
+    * [ ] Iterator Methods
+    * [ ] Loops
+- Flowcharts?
+    * [ ] What type to use
+    * [ ] Writing a function
 - `console.log()` notes in Node section (Chapter 1)
 - `String.prototype.trim()`
 - `Math.random()`
