@@ -57,3 +57,4 @@ For example, if we wanted to update FizzBuzz so it outputs "Spoon" for lines div
 
 - [FizzBuzz in Almost Every Language](https://rosettacode.org/wiki/FizzBuzz)
 - [FizzBuzz: One Simple Interview Question](https://www.youtube.com/watch?v=QPZ0pIK_wsc)
+- [Aha! Programming](https://kentcdodds.com/blog/aha-programming)
