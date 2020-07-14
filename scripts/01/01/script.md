@@ -94,7 +94,7 @@
 - Generally **declare and assign at same time**
 - Can reassign a value later
 - Variable types:
-    - `let
+    - `let`
     - `const`
     - `var`
 - Naming variables

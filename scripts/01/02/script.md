@@ -3,7 +3,7 @@
 ## Basic Logic
 
 - Boolean logic: `true` and `false`
-- **Don't use quotes!** (`let fakeNews = "false"``)
+- **Don't use quotes!** (`let fakeNews = "false"`)
 - Equality:
     - `===`: same type, not same type
     - `<`
@@ -34,7 +34,7 @@
 - `if` statements
     - single `if`: may not run
     - `if` with `else`: one side always runs
-    - `if` with `if else`
+    - `if` with `else if`
     - bit in brackets is "truth condition": evaluates to `true` or `false`
 - Ternary operator
     - statement vs expression: expression equates to a value
