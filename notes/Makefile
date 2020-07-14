@@ -3,11 +3,11 @@ tex := $(shell find . -type f -name "*.tex")
 source := $(shell find . -type f -name "*.js")
 
 notes.pdf: $(templates) $(tex) $(source)
-	xelatex -file-line-error --halt-on-error --shell-escape notes.tex
+	xelatex -file-line-error --halt-on-error --shell-escape notes.tex && xelatex --shell-escape notes.tex
 	open -g notes.pdf
 	terminal-notifier -message "Rendered" -title "XeLaTeX" -activate com.googlecode.iterm2
 
 extract.pdf: $(templates) $(tex) $(source)
-	xelatex -file-line-error --halt-on-error --shell-escape extract.tex
+	xelatex -file-line-error --halt-on-error --shell-escape extract.tex && xelatex --shell-escape extract.tex
 	open -g extract.pdf
 	terminal-notifier -message "Rendered" -title "XeLaTeX" -activate com.googlecode.iterm2
