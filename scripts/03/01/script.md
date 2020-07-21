@@ -3,6 +3,7 @@
 
 ## Arrays
 
+- Data structures
 - Arrays are ordered collections of values.
     - Empty array
     - Array of numbers
