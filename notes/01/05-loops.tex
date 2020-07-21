@@ -40,12 +40,12 @@ For example, say we wanted to add 1 to 2 to 3 to 4 and so on until we get to a n
 
     // will keep running until total is more than 100
     while (total <= 100) {
-        total += i;
         i += 1;
+        total += i;
     }
 
     console.log(total); // 105
-    console.log(i); // 15 - so the loop ran 15 times
+    console.log(i); // 14 - so the loop ran 14 times
 \end{minted}
 
 
