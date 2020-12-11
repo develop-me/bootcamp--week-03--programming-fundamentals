@@ -27,7 +27,7 @@
 - Strings:
     - `.length`
     - `.charAt(index)`
-    - `.substr(start, length)`
+    - `.substring(start, endBefore)`
     - `.search("blah")` - index if found or `-1`
     - `.toLowerCase()`
     - `.toUpperCase()`

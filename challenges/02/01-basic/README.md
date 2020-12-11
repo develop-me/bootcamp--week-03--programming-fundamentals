@@ -143,7 +143,7 @@ Create a new file for each challenge. Copy the provided code and then add your o
     console.log(even(2)); // true
     ```
 
-1) Create a function `max`, that takes two numbers as arguments. The function should return the highest of the numbers.
+1) Create a function `max`, that takes two numbers as arguments. The function should return the highest of the numbers. **You shouldn't use `Math.max()`**
 
     ```javascript
     // ... your function here
@@ -156,7 +156,7 @@ Create a new file for each challenge. Copy the provided code and then add your o
     );
     ```
 
-1) Create a function `min`, that takes two numbers as arguments. The function should return the smallest of the numbers.
+1) Create a function `min`, that takes two numbers as arguments. The function should return the smallest of the numbers. **You shouldn't use `Math.min()`**
 
     ```javascript
     // ... your function here

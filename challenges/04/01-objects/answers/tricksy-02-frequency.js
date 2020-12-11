@@ -1,5 +1,7 @@
 // Create a function called `frequency` that takes a string as an argument. It should return an object where each key represents a letter that appears in the string and the value is how many times that letter appears. It doesn't need to count spaces and it should ignore whether the letter is uppercase or lowercase.
 
+// Thanks to Zack (#17) for pointing out use of filter
+
 let frequency = string => {
     // convert the string to lowercase
     // split it into characters
@@ -7,12 +9,7 @@ let frequency = string => {
     let characters = Array.from(string.toLowerCase()).sort();
 
     // reduce into an object
-    return characters.reduce((record, letter) => {
-        // if space ignore
-        if (letter === " ") {
-            return record;
-        }
-
+    return characters.filter(letter => letter !== " ").reduce((record, letter) => {
         // if a new letter then setup a key with the count at 0
         if (!record[letter]) {
             record[letter] = 0;

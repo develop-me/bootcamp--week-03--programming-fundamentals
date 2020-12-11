@@ -1,8 +1,20 @@
-let log1 = () => console.log(1);
-let log2 = () => console.log(2);
-let log3 = () => console.log(3);
-let log4 = () => console.log(4);
+// greet takes one argument
+// multi-line, so we need curly-brackets
+let greet = name => {
+    // get the current hour of the day
+    let hour = new Date().getHours();
 
-log1();
-log4();
-log3();
+    if (hour < 12) {
+        return "Good morning " + name;
+    } else if (hour < 18) {
+        return "Good afternoon " + name;
+    }
+
+    // when a function returns a value it stops running
+    // so this will only ever run if the two return statements
+    // above don't run
+    return "Good evening " + name;
+};
+
+let greeting = greet("Mark");
+console.log(greeting);

@@ -15,8 +15,8 @@
     - multi-line with `return`
     - not *identical* to normal function, but advanced topic
 - Example: multiple three numbers
-- You should declare your functions before you use them, they won't run until **call** them (`order.js`)
 - You can put as much as you like inside a function: `greet.js`
+- You should declare your functions before you use them, they won't run until **call** them (`order.js`)
 - Writing functions:
     1. Think of a sensible name for the function: a short way of describing its purpose
     2. Think about how many arguments the function needs to accept: this will depend on what you're trying to do
