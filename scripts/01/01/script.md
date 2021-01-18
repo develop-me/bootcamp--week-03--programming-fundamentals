@@ -2,17 +2,23 @@
 
 ## Intro
 
-- Introduce yourself
-- Any admin stuff (e.g. finishing early for childcare)
+- Stand up
+- Lot to fit in this week!
+    - You will be overwhelmed!
+    - You shouldn't need to take notes
+- This week
+    - Fundamentals of programming
+    - With JS
 - What is programming?
     - As opposed to coding
         - Not to devalue non-programming coding
     - Giving computers instructions
     - Programming is a skill that takes a lot of practice to get good at, but everyone can do it
     - Send round link to [Things I Don't Know](https://overreacted.io/things-i-dont-know-as-of-2018/) - Dan Abramov, creator of Redux (hardest thing on the course), explains all the things he doesn't know
+- Introduce yourself
+    - Programming history
 - Ice breaker
     - Anyone done any before?
-- A lot of material to cover in one day
 
 
 ## Programming Fundamentals
