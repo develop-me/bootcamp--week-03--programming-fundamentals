@@ -1,18 +1,17 @@
-// a function to pig latinse a single word
-let pigLatinseWord = word => {
-    let head = word.charAt(0);
+// a function to pig latinise a single word
+let pigLatiniseWord = word => {
+    let head = word.charAt(0).toLowerCase();
     let tail = word.substring(1);
-
     return tail + head + "ay";
 };
 
 let pigLatin = str => {
     // splits the words by space
-    let words = str.toLowerCase().split(" ");
+    let words = str.split(" ");
 
-    // maps over using pigLatinseWord
+    // maps over using pigLatiniseWord
     // joins back into a string
-    return words.map(pigLatinseWord).join(" ");
+    return words.map(pigLatiniseWord).join(" ");
 };
 
 let result = pigLatin("The quick brown fox");

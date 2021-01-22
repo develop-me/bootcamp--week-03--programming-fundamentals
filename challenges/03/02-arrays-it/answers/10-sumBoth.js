@@ -3,13 +3,13 @@
 // an add function
 let add = (a, b) => a + b;
 
-// use reduce to add each array individually
-// then use it again to add the two results together
-let sumBoth = (first, second) => add(first.reduce(add, 0), second.reduce(add, 0));
+// a sum function
+let sum = arr => arr.reduce(add, 0);
+
+// add the two sums together
+let sumBoth = (first, second) => sum(first) + sum(second);
 
 console.log(
     sumBoth([2, 3, 4, 5, 6], [1, 2, 3, 4]), // 30
     sumBoth([2, 3, 4, 5, 6], [5, 10, 12]), // 47
 );
-
-// Answer by Tom from Cohort #11
