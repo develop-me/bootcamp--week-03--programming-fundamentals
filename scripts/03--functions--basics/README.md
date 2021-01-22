@@ -25,4 +25,6 @@
     5. The thinky bit: Work about how to turn the arguments into the return value
     6. Test it with a few values you know the answer to
     7. Optional: Refactor
-- Example **Fahrenheit to Celsius**: `let celsius = fahrenheit => (fahrenheit - 32) / 1.8;` - make sure to test it
+    8. Example **Fahrenheit to Celsius**: `let celsius = fahrenheit => (fahrenheit - 32) / 1.8;` - make sure to test it
+
+- "Any fool can write code that a computer can understand. Good programmers write code that humans can understand." — Martin Fowler

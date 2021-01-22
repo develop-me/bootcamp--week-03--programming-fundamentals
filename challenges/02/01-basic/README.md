@@ -78,8 +78,8 @@ Create a new file for each challenge. Copy the provided code and then add your o
     // ... your function here
 
     console.log(
-        stone(74), // 11.653
-        stone(50), // 7.87365
+        stone(74), // 11.653011122326696
+        stone(50), // 7.873656163734254
     );
     ```
 
@@ -195,15 +195,19 @@ Create a new file for each challenge. Copy the provided code and then add your o
 
 1) Create a function, `skip`, that takes two numbers, `skip` and `max`. The function should return the total of the numbers from 1 to `max` excluding any numbers divisible by `skip`.
 
+
     ```javascript
     let skip = (skip, max) => {
         // ... your code here
     }
 
     console.log(
-        skip(4, 20), // 1 + 2 + 3 + 5 + 6 + 7 + 9 + 10 + 11 + 13 + 14 + 15 + 17 + 18 + 19 = 150
+        // i.e. 1 + 2 + 3 + 5 + 6 + 7 + 9 + 10 + 11 + 13 + 14 + 15 + 17 + 18 + 19
+        skip(4, 20), // 150
     );
     ```
+
+
 
 1) Create a function, `prime`, that takes a number as an argument. The function should return `true` if the number is prime and `false` if it is not.
 
