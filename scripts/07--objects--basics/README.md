@@ -33,7 +33,7 @@
     - `.toUpperCase()`
     - `.split(" ")` - with space
     - `.split(", ")`
-    - `Array.from("wombat")` - to split on characters
+    - `Array.from("wombat 💩")` - to split on characters
 - Date
     - `new Date()` - now
     - `new Date("2018-08-24")` - specific date
