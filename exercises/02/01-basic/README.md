@@ -2,7 +2,7 @@
 
 ---
 
-## Challenges
+## Exercises
 
 Create a new file for each challenge. Copy the provided code and then add your own code in the `// ... your function here` bit.
 
@@ -180,7 +180,7 @@ Create a new file for each challenge. Copy the provided code and then add your o
 
 ---
 
-## Tricksy Challenges
+## Tricksy Exercises
 
 1) Create a function, `wow`, that takes a number, `n`, as an argument. The function should return the word "Wo...ow", where there are `n` "o"s.
 

@@ -2,7 +2,7 @@
 
 ---
 
-## Challenges
+## Exercises
 
 For each challenge create a new `.js` file. Then run `node filename.js` to see if it's worked.
 

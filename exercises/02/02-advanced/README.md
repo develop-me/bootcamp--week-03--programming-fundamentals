@@ -2,7 +2,7 @@
 
 ---
 
-## Challenges
+## Exercises
 
 1) Create a function, `even`, that takes a number as an argument. The function should return `true` if the number is even and `false` if it is odd. *Use the `odd` function that you've previously written.*
 
@@ -15,9 +15,9 @@
     console.log(even(2)); // true
     ```
 
-2) Finish the tricksy challenges from earlier if you haven't already. Then, use function composition to break them up into smaller functions. You may find you've written some of them already!
+2) Finish the tricksy exercises from earlier if you haven't already. Then, use function composition to break them up into smaller functions. You may find you've written some of them already!
 
-## Tricksy Challenges
+## Tricksy Exercises
 
 Create a new file for each challenge. Copy the provided code and then add your own code in the `// ... your function here` bit.
 

@@ -1,6 +1,6 @@
 # Objects
 
-## Challenges
+## Exercises
 
 Create a new file for each challenge.
 
@@ -178,7 +178,7 @@ Don't worry about the weird `(() => { ... })()` notation - you'll learn about it
     ```
 
 
-## Tricksy Challenges
+## Tricksy Exercises
 
 1) Create a function, `titleCase`, that takes a string and converts it to title case.
 

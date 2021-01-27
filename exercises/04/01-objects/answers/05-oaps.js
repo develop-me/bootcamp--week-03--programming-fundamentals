@@ -1,6 +1,6 @@
 // Create a function, `oaps`, that takes an array of objects. It should return an array containing only those objects that have an `age` property greater than `65`
 
-// our oap function from a few challenges back
+// our oap function from a few exercises back
 let oap = person => person.age > 65;
 
 // filter using the oap function

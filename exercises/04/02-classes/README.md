@@ -1,4 +1,4 @@
-# Challenges
+# Exercises
 
 Create a new file for each challenge. Copy the provided code and then add your own code in the `// ... your function here` bit.
 
@@ -24,7 +24,7 @@ Create a new file for each challenge. Copy the provided code and then add your o
 
 ## Classes
 
-For the following challenges, **look at how the class is being used to work out what it needs to do**.
+For the following exercises, **look at how the class is being used to work out what it needs to do**.
 
 1) Create a class that represents a light switch
 
@@ -82,7 +82,7 @@ For the following challenges, **look at how the class is being used to work out 
     ```
 
 
-## Tricksy Challenges
+## Tricksy Exercises
 
 1) Copy the `person` object and update the value of the `name` property to be "Bob" and the value of the `postcode` property to be `BS4 9EE`:
 

@@ -44,7 +44,7 @@ Copy the code for each challenge into your file and fill out the `// your code h
     console.log(sum); // 170
     ```
 
-For the next challenges, remember to use `console.log()` to see your answer:
+For the next exercises, remember to use `console.log()` to see your answer:
 
 1) Work out what 1 quadrillion (a one with 15 zeroes after it) divided by 17, minus 8 is (it should start `588` and end in `56.7`)
 
