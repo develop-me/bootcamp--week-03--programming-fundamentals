@@ -10,6 +10,6 @@
     - [Arrays](https://github.com/develop-me/bootcamp--week-03--programming-fundamentals/blob/master/scripts/03/01/script.md)
     - [Array Iterator Methods](https://github.com/develop-me/bootcamp--week-03--programming-fundamentals/blob/master/scripts/03/02/script.md)
 - Day 4: Objects
-    - [Objects & the Standard Library](https://github.com/develop-me/bootcamp--week-03--programming-fundamentals/blob/master/scripts/04/01/script.md)
+    - [Objects & Built-In Methods](https://github.com/develop-me/bootcamp--week-03--programming-fundamentals/blob/master/scripts/04/01/script.md)
     - [Advanced Object Techniques & Classes](https://github.com/develop-me/bootcamp--week-03--programming-fundamentals/blob/master/scripts/04/02/script.md)
 - Day 5: Quiz
