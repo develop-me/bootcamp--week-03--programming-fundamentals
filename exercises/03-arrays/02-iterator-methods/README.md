@@ -1,10 +1,10 @@
 # Arrays
 
-## Challenges
+## Exercises
 
-Copy the provided code and then add your own code in the `// ... your function here` bit. **Make sure you write a function for each challenge**.
+Copy the provided code and then add your own code in the `// ... your function here` bit. **Make sure you write a function for each exercise**.
 
-You might be able to reuse functions you've written already for some of these challenges.
+You might be able to reuse functions you've written already for some of these exercises.
 
 1) Create a function, `squares`, that takes an array of numbers as an argument. Using `.map()` return a new array containing the square of each number.
 
@@ -140,7 +140,7 @@ You might be able to reuse functions you've written already for some of these ch
     );
     ```
 
-## Tricksy Challenges
+## Tricksy Exercises
 
 1) Create a function, `reverse`, that takes an array of strings. Return a new array where each string is reversed.
 
@@ -192,7 +192,7 @@ You might be able to reuse functions you've written already for some of these ch
     console.log(palindrome("minim")); // true
     ```
 
-## Über Tricksy Challenges
+## Über Tricksy Exercises
 
 1) Create a function, `flatten`, that takes an array containing a mix of values and arrays. It should return an array containing all the values from all the arrays. It should cope with arrays containing other arrays to any level. **Don't use the `.flat()` or `.flatMap()` array methods**
 

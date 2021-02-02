@@ -1,8 +1,8 @@
 # Objects
 
-## Challenges
+## Exercises
 
-Create a new file for each challenge.
+Create a new file for each exercise.
 
 - Create an object that represents you. Try and use at least one string, number, boolean, array, and object for the properties.
 
@@ -16,11 +16,11 @@ Create a new file for each challenge.
 
 Copy the provided code and then add your own code in the `// ... your function here` bit.
 
-Look at how the function is being called in the test cases provided before you start the challenge.
+Look at how the function is being called in the test cases provided before you start the exercise.
 
 Don't worry about the weird `(() => { ... })()` notation - you'll learn about it next week.
 
-**Make sure you write a function for each challenge**.
+**Make sure you write a function for each exercise**.
 
 1) Update `sameName` to return `true` if the objects have the same `name` property and `false` if they have different names.
 
@@ -178,7 +178,7 @@ Don't worry about the weird `(() => { ... })()` notation - you'll learn about it
     ```
 
 
-## Tricksy Challenges
+## Tricksy Exercises
 
 1) Create a function, `titleCase`, that takes a string and converts it to title case.
 

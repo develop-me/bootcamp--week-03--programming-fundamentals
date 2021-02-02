@@ -22,7 +22,7 @@
 - `map`, `filter`, and `reduce` with objects (without destructuring)
 
 
-## Standard library:
+## Built-In Methods
 
 - Strings:
     - `.length`

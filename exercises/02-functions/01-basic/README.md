@@ -2,9 +2,9 @@
 
 ---
 
-## Challenges
+## Exercises
 
-Create a new file for each challenge. Copy the provided code and then add your own code in the `// ... your function here` bit.
+Create a new file for each exercise. Copy the provided code and then add your own code in the `// ... your function here` bit.
 
 **You should use fat arrow syntax for all of your functions.** You *don't* need to write them all as single-line functions (unless you want to).
 
@@ -180,7 +180,7 @@ Create a new file for each challenge. Copy the provided code and then add your o
 
 ---
 
-## Tricksy Challenges
+## Tricksy Exercises
 
 1) Create a function, `wow`, that takes a number, `n`, as an argument. The function should return the word "Wo...ow", where there are `n` "o"s.
 

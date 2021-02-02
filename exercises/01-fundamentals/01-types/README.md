@@ -1,8 +1,8 @@
 # Strings & Numbers
 
-For each challenge create a new `.js` file. Then run `node filename.js` to see if it's worked.
+For each exercise create a new `.js` file. Then run `node filename.js` to see if it's worked.
 
-Copy the code for each challenge into your file and fill out the `// your code here` part:
+Copy the code for each exercise into your file and fill out the `// your code here` part:
 
 1) Add up the numbers:
 
@@ -44,7 +44,7 @@ Copy the code for each challenge into your file and fill out the `// your code h
     console.log(sum); // 170
     ```
 
-For the next challenges, remember to use `console.log()` to see your answer:
+For the next exercises, remember to use `console.log()` to see your answer:
 
 1) Work out what 1 quadrillion (a one with 15 zeroes after it) divided by 17, minus 8 is (it should start `588` and end in `56.7`)
 

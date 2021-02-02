@@ -2,7 +2,7 @@
 
 ---
 
-## Challenges
+## Exercises
 
 1) Write some code that outputs 50 lines, alternating between ☃☃☃ and ❄❄❄
 
@@ -20,7 +20,7 @@
 
 ---
 
-## Tricksy Challenges
+## Tricksy Exercises
 
 1) Every character on the keyboard has a "Character Code" associated with it: e.g. "A" is 65. We can use `String.fromCharCode(65)` to get back the letter "A".
 
