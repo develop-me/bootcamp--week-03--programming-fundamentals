@@ -1,8 +1,8 @@
 # Strings & Numbers
 
-For each challenge create a new `.js` file. Then run `node filename.js` to see if it's worked.
+For each exercise create a new `.js` file. Then run `node filename.js` to see if it's worked.
 
-Copy the code for each challenge into your file and fill out the `// your code here` part:
+Copy the code for each exercise into your file and fill out the `// your code here` part:
 
 1) Add up the numbers:
 

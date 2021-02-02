@@ -19,7 +19,7 @@
 
 ## Tricksy Exercises
 
-Create a new file for each challenge. Copy the provided code and then add your own code in the `// ... your function here` bit.
+Create a new file for each exercise. Copy the provided code and then add your own code in the `// ... your function here` bit.
 
 1) Create three functions:
 

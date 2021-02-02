@@ -4,7 +4,7 @@
 
 ## Exercises
 
-For each challenge create a new `.js` file. Then run `node filename.js` to see if it's worked.
+For each exercise create a new `.js` file. Then run `node filename.js` to see if it's worked.
 
 1) Write some code that lists the numbers from 1 to 100 using a `for` loop
 

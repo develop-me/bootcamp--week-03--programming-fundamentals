@@ -4,7 +4,7 @@
 
 ## Exercises
 
-Create a new file for each challenge. Copy the provided code and then add your own code in the `// ... your function here` bit.
+Create a new file for each exercise. Copy the provided code and then add your own code in the `// ... your function here` bit.
 
 **You should use fat arrow syntax for all of your functions.** You *don't* need to write them all as single-line functions (unless you want to).
 

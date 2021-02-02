@@ -2,7 +2,7 @@
 
 ## Exercises
 
-Copy the provided code and then add your own code in the `// ... your function here` bit. **Make sure you write a function for each challenge**.
+Copy the provided code and then add your own code in the `// ... your function here` bit. **Make sure you write a function for each exercise**.
 
 You might be able to reuse functions you've written already for some of these exercises.
 

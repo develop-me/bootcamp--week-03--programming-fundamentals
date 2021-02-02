@@ -1,9 +1,9 @@
 ## To Do
 
 - Easier quiz
-- More basic object challenges
-    > Few more non-array challenges
-- More basic array challenges
+- More basic object exercises
+    > Few more non-array exercises
+- More basic array exercises
 - Just use fat arrow functions?
 - Notes about passing variables to functions
     > Make it clear that the name is not important
@@ -18,7 +18,7 @@
 - `console.log()` notes in Node section (Chapter 1)
 - `String.prototype.trim()`
 - `Math.random()`
-- Some `switch` challenges
+- Some `switch` exercises
 - Talk about using pseudo-code to work through questions - comments as you go
 - Objects: Computed property names
 - More test cases
@@ -28,8 +28,8 @@
     > Encourage reuse of existing functions
     * [ ] Update answers to use composition
 - Move concatenation and issues with numbers strings to after variables?
-- Some logic challenges?
-- Number challenges
+- Some logic exercises?
+- Number exercises
 - console.assert() for basic testing?
 
 ## Doing
@@ -53,12 +53,12 @@
 - Talk about object instances and object literals
 - Glossary
 - Add more about nested array/object spread copying to notes
-- Rename challenge files to 'README.md'
+- Rename exercise files to 'README.md'
 - `=>` in objects doesn't have access to `this`
-- Fewer `for` loop challenges in the quiz
+- Fewer `for` loop exercises in the quiz
 - `Array.prototype.splice` - for removing elements from an array
 - Include `[].reverse()` somewhere
-- Move array max challenge further down
-- Use IIFEs for earlier challenges
+- Move array max exercise further down
+- Use IIFEs for earlier exercises
     > Establish that you can pass variables to functions earlier on
 - Move map, filter, reduce with object arrays to Day 4 morning

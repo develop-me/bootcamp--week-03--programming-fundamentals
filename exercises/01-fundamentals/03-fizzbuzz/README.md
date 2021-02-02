@@ -2,7 +2,7 @@
 
 *a.k.a. Everyone's Favourite Job Interview Question*
 
-The FizzBuzz challenge is as follows:
+The FizzBuzz exercise is as follows:
 
 - write some code that will output the numbers 1 to 100 in the console
 - *unless* the number is divisible by 3, in which case output "Fizz"
