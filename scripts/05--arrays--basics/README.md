@@ -24,6 +24,10 @@
 - An array is a *single* value
     - store in a single variable
     - when passed to a function it's a single argument
+- Spread operator:
+    - copying an array
+    - merging an array
+    - add to beginning/end of copied array
 - Useful operations
     - `.sort()`: *alphabetic* sort (**destructive**)
     - `.reverse()`:  reverses (**destructive**)
@@ -33,7 +37,3 @@
     - `.includes(term)`: does it exist in array, boolean
     - `.slice(start, finishBefore)`: part of an array
     - `.splice(start, numberOfItems)`: removes part of an array and returns remove parts (**destructive**)
-- Spread operator:
-    - copying an array
-    - merging an array
-    - add to beginning/end of copied array
