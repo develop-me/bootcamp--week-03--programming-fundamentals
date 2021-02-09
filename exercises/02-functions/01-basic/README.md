@@ -21,11 +21,16 @@ Create a new file for each exercise. Copy the provided code and then add your ow
 
 1) Create a function, `hello`, that takes a string as an argument. The function should return the string "hello *name*".
 
+    **Remember**: when you pass a variable in as an argument, you're only passing the value, not the variable name
+
     ```javascript
     // ... your function here
 
-    console.log(hello("alice")); // "hello alice"
-    console.log(hello("bob")); // "hello bob"
+    let first = "alice";
+    console.log(hello(first)); // "hello alice"
+
+    let second = "bob";
+    console.log(hello(second)); // "hello bob"
     ```
 
 1) Create a function, `divide`, that takes two numbers as arguments. The function should return the first number divided by the second number.
@@ -61,7 +66,10 @@ Create a new file for each exercise. Copy the provided code and then add your ow
     // ... your function here
 
     console.log(helloYouTwo("Alice", "Bob")); // "Hello Alice and Bob"
-    console.log(helloYouTwo("Carol", "Dylan")); // "Hello Carol and Dylan"
+
+    let firstName = "Carol";
+    let secondName = "Dylan";
+    console.log(helloYouTwo(firstName, secondName)); // "Hello Carol and Dylan"
     ```
 
 1) Create a function, `helloU2`, that doesn't take any arguments. The function should return the string "Hello Bono and the Edge".
@@ -77,10 +85,10 @@ Create a new file for each exercise. Copy the provided code and then add your ow
     ```javascript
     // ... your function here
 
-    console.log(
-        stone(74), // 11.653011122326696
-        stone(50), // 7.873656163734254
-    );
+    console.log(stone(74)); // 11.653011122326696
+
+    let fifty = 50;
+    console.log(stone(fifty)); // 7.873656163734254
     ```
 
 1) Create a function, `fahrenheit`, that takes a temperature in Celsius and converts it to Fahrenheit

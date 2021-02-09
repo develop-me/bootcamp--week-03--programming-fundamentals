@@ -4,4 +4,7 @@
 let helloYouTwo = (name1, name2) => `Hello ${name1} and ${name2}`;
 
 console.log(helloYouTwo("Alice", "Bob")); // "Hello Alice and Bob"
-console.log(helloYouTwo("Carol", "Dylan")); // "Hello Carol and Dylan"
+
+let firstName = "Carol";
+let secondName = "Dylan";
+console.log(helloYouTwo(firstName, secondName)); // "Hello Carol and Dylan"

@@ -3,5 +3,8 @@
 // using template strings
 let hello = name => `hello ${name}`;
 
-console.log(hello("alice")); // "hello alice"
-console.log(hello("bob")); // "hello bob"
+let first = "alice";
+console.log(hello(first)); // "hello alice"
+
+let second = "bob";
+console.log(hello(second)); // "hello bob"

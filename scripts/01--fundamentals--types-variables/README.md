@@ -99,6 +99,9 @@
 - Can then use the values
 - Generally **declare and assign at same time**
 - Can reassign a value later
+- Variables are transient
+    - just store a value
+    - can store the same value in another variable
 - Variable types:
     - `let`
     - `const`

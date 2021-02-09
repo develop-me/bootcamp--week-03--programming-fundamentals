@@ -23,10 +23,11 @@ You might be able to reuse functions you wrote yesterday for some of these exerc
         // your code here
     };
 
-    console.log(
-        squares([2, 3, 4]), // [4, 9, 16]
-        squares([2, 3, 4, 5, 6]), // [4, 9, 16, 25, 36]
-    );
+    let twoToFour = [2, 3, 4];
+    console.log(squares(twoToFour)); // [4, 9, 16]
+
+    let twoToSix = [2, 3, 4, 5, 6];
+    console.log(squares(twoToSix)); // [4, 9, 16, 25, 36]
     ```
 
 1) Create a function, `odds`, that takes an array of numbers. Return an array containing only the odd numbers.

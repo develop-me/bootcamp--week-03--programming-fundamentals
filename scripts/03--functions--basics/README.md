@@ -9,6 +9,9 @@
 - Can assign a function to a variable like any other value
 - Functions don't run until you **call** them
 - When you call a function you can pass it **arguments**
+- Functions accept the arguments with **parameters**
+    - Just variables that are created for you
+    - Only exist inside the function
 - Functions normally return values
 - **Fat arrow** syntax
     - one line
@@ -17,6 +20,21 @@
 - Example: multiple three numbers
 - You can put as much as you like inside a function: `greet.js`
 - You should declare your functions before you use them, they won't run until **call** them (`order.js`)
+
+- Passing variables to functions
+    - only the value is passed
+    - the variable name is transient
+
+    ```js
+    let add = function (a, b) {
+        return a + b;
+    };
+
+    // later on
+    let number1 = 1;
+    let number2 = 2;
+    add(number1, number2); // 3
+    ```
 - Writing functions:
     1. Think of a sensible name for the function: a short way of describing its purpose
     2. Think about how many arguments the function needs to accept: this will depend on what you're trying to do
